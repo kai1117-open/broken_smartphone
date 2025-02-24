@@ -1,0 +1,2 @@
+module GooglePageHelper
+end

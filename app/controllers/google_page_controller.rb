@@ -1,0 +1,2 @@
+class GooglePageController < ApplicationController
+end

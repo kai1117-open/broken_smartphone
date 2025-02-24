@@ -1,0 +1,78 @@
+<h1 class="logo">
+<span class="c">C</span>
+<span class="o1">o</span>
+<span class="o2">o</span>
+<span class="g">g</span>
+<span class="l">l</span>
+<span class="e">e</span>
+</h1>
+
+<div class="search-box">
+<input type="text" placeholder="Google で検索または URL を入力">
+<button>
+    <img src="https://www.google.com/images/icons/material/system/2x/search_grey600_24dp.png" width="20" alt="検索">
+</button>
+</div>
+
+<div class="shortcut-icons">
+<img src="https://www.google.com/favicon.ico" alt="Google">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg" alt="Facebook" width="50">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/512px-Instagram_icon.png" alt="Instagram">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="50">
+
+</div>
+
+<style>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+}
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.shortcut-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.shortcut-icons img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+.logo span {
+    font-size: 50px;
+    font-weight: bold;
+}
+.c { color: #4285F4; }
+.o1 { color: #EA4335; }
+.o2 { color: #FBBC05; }
+.g { color: #34A853; }
+.l { color: #4285F4; }
+.e { color: #EA4335; }
+</style>

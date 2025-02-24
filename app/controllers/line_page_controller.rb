@@ -1,0 +1,2 @@
+class LinePageController < ApplicationController
+end

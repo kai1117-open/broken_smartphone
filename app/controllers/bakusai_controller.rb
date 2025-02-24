@@ -1,0 +1,2 @@
+class BakusaiController < ApplicationController
+end
