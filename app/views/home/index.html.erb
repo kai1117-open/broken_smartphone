@@ -1,10 +1,155 @@
-<h1>Welcome to Broken Smartphone</h1>
-<p>これはトップページです。</p>
+<header class="mystery-header">
+<h1><%= link_to '割れたスマホ', root_path, class: "home-link" %></h1>
+</header>
 
-<% if user_signed_in? %>
-  <p>ようこそ、<%= current_user.email %> さん！</p>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'ログイン', new_user_session_path %> |
-  <%= link_to '新規登録', new_user_registration_path %>
-<% end %>
+<div class="container text-center ">
+
+
+<div class="prologue">
+    <h2 class = "text-center mt-1 mb-2 text-danger">プロローグ</h2>
+    <p>片町のネオンが雨の舗道に滲んでいる。街は週末の喧騒に包まれ、</br>
+       酔いどれた人々の笑い声が路地裏まで響いていた。</p>
+    <p class="bg-secondary">「いやぁ、20歳の初飲みは片町で良かった！ずっと、ここの居酒屋行きたかったから！」</p>
+    <p>室谷隼人が上機嫌に笑いながら言った。</p>
+    <p class="bg-secondary">「もうそろそろバス停に行かないと、間に合わないよ」</p>
+    <p>横山圭介は無言でスマホをいじりながら、ぽつりと言った。</br>
+       2人とも高校からの友達で、20歳になったので、地元の繁華街に飲みに来たってところだ。</br>
+       俺たちは、バス停に向かうために歩いていた。酒の酔いが心地よく、夜風が頬に冷たい。</p>
+    <p class="bg-secondary">「ん？」</p>
+    <p>隼人が足元を見てしゃがみ込む。地面にはバキバキに割れたスマホが転がっていた。</p>
+    <p class="bg-secondary">「なんだこれ……？」</p>
+    <p>隼人はスマホを拾い上げ、電源を入れようとするが、画面は沈黙を保ったまま。</br>
+       割れたガラスの隙間から、小さな光がちらついていた。</p>
+    <p class="bg-secondary">「これ、持ち主に届けたら、お礼とか貰えたりするかもな！」</p>
+    <p>相変わらず陽気な隼人は無邪気に笑ったが、圭介の目が一瞬鋭く光る。</p>
+    <p class="bg-secondary">「……ちょっと俺に貸してみろ。」</p>
+    <p>機械に詳しい圭介は手際よくスマホを確認し始めた。数分後、顔を上げる。</p>
+    <p class="bg-secondary">「一部のデータなら、復元できそうだ。」</p>
+    <p>その言葉に、俺たちの心臓が少しだけ高鳴った。</br>
+       まるで何かに誘われるように、俺たちはそのスマホに触れてしまった。</p>
+</div>
+    <p>この先は、新規登録かログインして先に進めます。</p>
+    <p>新規登録をすると、進捗状態が保存されて、途中から再開することが可能です</p>
+    <a href="<%= new_user_session_path %>" class="mystery-link">ログイン</a>
+    <a href="<%= new_user_registration_path %>" class="mystery-link">新規登録</a>
+
+</div>
+
+<footer class="footer">
+<p>&copy; 2025 Broken Smartphone</p>
+</footer>
+<style>
+.home-link {
+  text-decoration: none; /* 下線を消す */
+  color: #ffffff; /* 白文字 */
+  transition: color 0.3s ease-in-out;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://www.pakutaso.com/20231159311post-49222.html');
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow-y: auto; /* スクロールを可能にする */
+}
+
+/* 背景のぼかし */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/pakusnIMG_9573.jpg') no-repeat center center/cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* 追加する画像 */
+body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: url('/assets/372681.png') no-repeat center center/contain;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.mystery-header {
+  text-align: center;
+  padding: 20px 20px;
+  background: linear-gradient(to right, #1a1a1a, #000000);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mystery-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.7);
+    letter-spacing: 3px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 120px auto;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.2);
+}
+
+.prologue {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.mystery-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    color: #fff;
+    background-color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.mystery-link:hover {
+    background-color: #b20710;
+    text-shadow: 1px 1px 5px rgba(255, 0, 0, 0.7);
+}
+
+.footer {
+    z-index: 1000;
+    background: linear-gradient(to right, #1a1a1a, #000000);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+</style>

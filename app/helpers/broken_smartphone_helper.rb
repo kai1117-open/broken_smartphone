@@ -1,0 +1,2 @@
+module BrokenSmartphoneHelper
+end
