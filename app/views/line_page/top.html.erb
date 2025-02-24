@@ -1,0 +1,176 @@
+
+<div class="chat-container">
+<header class="top-bar">
+
+<h1>トーク一覧</h1>
+<div class="icons">
+    <span>🔍</span>
+    <span>📂</span>
+    <span>⚙</span>
+</div>
+</header>
+
+<div class="search-bar">
+<input type="text" placeholder="🔍 検索（使用できません）">
+</div>
+
+
+
+<main class="chat-list">
+<%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
+  <div class="chat-item">
+      <img src="avatar1.jpg" alt="ユーザー">
+      <div class="chat-info">
+          <h2>グループライン</h2>
+          <p>テストテストテスト</p>
+      </div>
+      <span class="badge">1</span>
+  </div>
+<% end %>
+<%= link_to line_page_hayato_path, style: "text-decoration:none; color:inherit;" do %>
+<div class="chat-item">
+    <img src="dmm_logo.png" alt="DMM WEB CAMP">
+    <div class="chat-info">
+        <h2>室谷隼人</h2>
+        <p>テストテストテスト</p>
+    </div>
+</div>
+<% end %>
+<%= link_to line_page_keisuke_path, style: "text-decoration:none; color:inherit;" do %>
+<div class="chat-item">
+    <img src="line_coupon.png" alt="LINE クーポン">
+    <div class="chat-info">
+        <h2>横山圭介</h2>
+        <p>テストテストテスト</p>
+    </div>
+    <span class="badge">2</span>
+</div>
+<% end %>
+
+
+
+</main>
+
+</div>
+
+<div class="dash text-center mt-3 mb-3">
+<%= link_to 'ダッシュボードへ', home_dashboard_path, class: 'btn btn-primary' %>
+</div>
+
+<style>
+body {
+  background-color: #d3e8d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.chat-container {
+  width: 480px;
+  height: 600px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* ヘッダー内の時刻 */
+.top-bar .time {
+  font-size: 16px;
+}
+
+.icons span {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.search-bar {
+  padding: 10px;
+  background-color: white;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+
+.chat-list {
+  padding: 10px;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.chat-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-info h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.chat-info p {
+  font-size: 12px;
+  color: gray;
+  margin: 2px 0 0;
+}
+
+/* チャット項目内の時刻 */
+.chat-item .time {
+  font-size: 12px;
+  color: gray;
+  margin-left: 10px;
+}
+
+.badge {
+  background: orange;
+  color: white;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.dash{
+  position: absolute;
+  bottom: 0;
+  
+}
+
+</style>
