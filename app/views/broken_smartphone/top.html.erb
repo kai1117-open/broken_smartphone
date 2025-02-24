@@ -1,5 +1,134 @@
-<h1>BrokenSmartphone#top</h1>
-<p>Find me in app/views/broken_smartphone/top.html.erb</p>
-<div class="dash text-center mt-3 mb-3">
-<%= link_to 'ダッシュボードへ', home_dashboard_path, class: 'btn btn-primary' %>
+<div class="container">
+    <div class="smartphone">
+        <div class="notch"></div> <!-- ノッチ部分 -->
+        <div class="screen">
+            <ul class="link-list">
+                <li><a href="#"> Google</a></li>
+                <li><a href="#"> YouTube</a></li>
+                <li><a href="#"> Twitter</a></li>
+                <li><a href="#"> Instagram</a></li>
+                <li><a href="#"> Amazon</a></li>
+                <li><a href="#"> Yahoo!ニュース</a></li>
+                <li><a href="#"> Wikipedia</a></li>
+                <li><a href="#"> 掲示板サイト</a></li>
+            </ul>
+        </div>
+        <div class="home-button"></div> <!-- ホームボタン -->
+    </div>
+
+    <!-- ダッシュボードボタンをスマホの下の中央に配置 -->
+    <div class="dash">
+        <%= link_to 'ダッシュボードへ', home_dashboard_path, class: 'btn btn-primary' %>
+    </div>
 </div>
+
+<style>
+/* 全体のセンタリング */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+/* 背景のぼかし */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/pakusnIMG_9573.jpg') no-repeat center center/cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* 追加する画像 */
+body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: url('/assets/372681.png') no-repeat center center/contain;
+    z-index: -1;
+    opacity: 0.8;
+}
+/* スマホのコンテナ（中央配置） */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* スマホの枠 */
+.smartphone {
+    width: 310px;
+    height: 600px;
+    background-color: #000;
+    border-radius: 40px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* スマホ上部のノッチ（カメラ部分） */
+.notch {
+    width: 140px;
+    height: 30px;
+    background-color: #222;
+    border-radius: 15px;
+    position: absolute;
+    top: 5px;
+}
+
+/* スマホ画面 */
+.screen {
+    width: 270px;
+    height: 520px;
+    background-color: white;
+    border-radius: 30px;
+    overflow-y: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ホームボタン */
+.home-button {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 6px;
+}
+
+.link-list{
+ margin-top:15px;
+}
+
+/* ダッシュボードボタンをスマホの下に配置 */
+.dash {
+    position: absolute;
+    bottom: -70px; /* スマホの下に配置 */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* ダッシュボードボタンの見た目を調整 */
+.dash .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+</style>
