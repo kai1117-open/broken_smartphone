@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   get 'google_page/top'
 
-  get 'bakusai/top'
-  
+  get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
+  get 'bakusai/test', to: 'bakusai#test', as: 'bakusai_test'
   root 'home#index'
   get 'home/dashboard', to: 'home#dashboard'
 
