@@ -17,36 +17,33 @@
 
 
 <main class="chat-list">
-<%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
-  <div class="chat-item">
-      <img src="avatar1.jpg" alt="ユーザー">
-      <div class="chat-info">
-          <h2>グループライン（3）</h2>
-          <p>テストテストテスト</p>
-      </div>
-      <span class="badge">1</span>
-  </div>
-<% end %>
-<%= link_to line_page_hayato_path, style: "text-decoration:none; color:inherit;" do %>
-<div class="chat-item">
-    <img src="dmm_logo.png" alt="DMM WEB CAMP">
-    <div class="chat-info">
-        <h2>室谷隼人</h2>
-        <p>テストテストテスト</p>
-    </div>
-</div>
-<% end %>
-<%= link_to line_page_keisuke_path, style: "text-decoration:none; color:inherit;" do %>
-<div class="chat-item">
-    <img src="line_coupon.png" alt="LINE クーポン">
-    <div class="chat-info">
-        <h2>横山圭介</h2>
-        <p>テストテストテスト</p>
-    </div>
-    <span class="badge">2</span>
-</div>
+<% if current_user.progress_level == 0 %>
+<%= render "line_page/chat-list/chat-list-1" %>
 <% end %>
 
+<% if current_user.progress_level == 1 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
+
+<% if current_user.progress_level == 2 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
+
+<% if current_user.progress_level == 3 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
+
+<% if current_user.progress_level == 4 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
+
+<% if current_user.progress_level == 5 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
+
+<% if current_user.progress_level == 6 %>
+<%= render "line_page/chat-list/chat-list-1" %>
+<% end %>
 
 
 </main>
