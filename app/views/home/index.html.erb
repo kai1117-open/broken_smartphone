@@ -31,17 +31,18 @@
 
     <p>この先は、新規登録かログインして先に進めます。</p>
     <p>新規登録をすると、進捗状態が保存されて、途中から再開することが可能です</p>
-    <% if user_signed_in? %>
+    <% if current_user %>
     <div class="dash text-center mt-3 mb-3">
     <%= link_to 'ダッシュボードへ', home_dashboard_path, class: 'btn btn-danger border-primary' %>
     <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
         <%= submit_tag 'ログアウト', class: 'btn text-white btn-sm mt-5' %>
     <% end %>
     </div>
-    <% else %>
+  <% else %>
     <a href="<%= new_user_session_path %>" class="mystery-link">ログイン</a>
     <a href="<%= new_user_registration_path %>" class="mystery-link">新規登録</a>
-    <% end %>
+  <% end %>
+  
 </div>
 
 <footer class="footer">
