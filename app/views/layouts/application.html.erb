@@ -10,12 +10,33 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
   <body>
-    <%= yield %>
-  </body>
+
   <% flash.each do |key, message| %>
-    <div class="alert <%= key == 'notice' ? 'alert-success' : 'alert-danger' %>">
+    <div class="alert <%= key == 'notice' ? 'alert-success' : 'alert-danger' %> flash-message" role="alert">
       <%= message %>
     </div>
   <% end %>
+  
+
+
+    <%= yield %>
+  </body>
+
 </html>
+
+<style>
+.flash-message {
+  animation: fadeOutAndHide 3s ease-in-out forwards;
+  opacity: 1;
+}
+
+/* フェードアウト + 高さを0にする */
+@keyframes fadeOutAndHide {
+  0% { opacity: 1; height: auto; }
+  100% { opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden; }
+}
+
+</style>

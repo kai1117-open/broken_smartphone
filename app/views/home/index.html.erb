@@ -34,6 +34,9 @@
     <% if user_signed_in? %>
     <div class="dash text-center mt-3 mb-3">
     <%= link_to 'ダッシュボードへ', home_dashboard_path, class: 'btn btn-danger border-primary' %>
+    <%= form_with url: destroy_user_session_path, method: :delete, local: true do %>
+        <%= submit_tag 'ログアウト', class: 'btn text-white btn-sm mt-5' %>
+    <% end %>
     </div>
     <% else %>
     <a href="<%= new_user_session_path %>" class="mystery-link">ログイン</a>

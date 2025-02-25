@@ -93,6 +93,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.12.1)
+      devise (>= 4.9.0)
+    devise-i18n-views (0.3.7)
     erubi (1.13.1)
     execjs (2.10.0)
     faker (3.5.1)
@@ -271,6 +274,8 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  devise-i18n
+  devise-i18n-views
   faker
   jbuilder (~> 2.7)
   listen (~> 3.3)

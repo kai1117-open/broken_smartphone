@@ -60,3 +60,5 @@ gem 'rails-i18n'   # 日本語対応
 gem 'faker'        # テストデータ生成
 gem 'bootstrap', '~> 5.2.0'
 gem 'sassc-rails'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
