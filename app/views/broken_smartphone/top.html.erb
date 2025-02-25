@@ -3,14 +3,27 @@
         <div class="notch"></div> <!-- ノッチ部分 -->
         <div class="screen">
             <ul class="link-list">
+            <% if current_user.progress_level == 0 %>
+            <a>まずは2人から話を聞こう</a>
+            <% end %>
+                <% if current_user.progress_level > 1 %>
                 <li><a href="#"> Google</a></li>
+                <% elsif current_user.progress_level > 2 %>
                 <li><a href="#"> YouTube</a></li>
+                <% elsif current_user.progress_level > 3 %>
                 <li><a href="#"> Twitter</a></li>
+                <% elsif current_user.progress_level > 4 %>
                 <li><a href="#"> Instagram</a></li>
+                <% elsif current_user.progress_level > 5 %>
                 <li><a href="#"> Amazon</a></li>
+                <% elsif current_user.progress_level > 6 %>
                 <li><a href="#"> Yahoo!ニュース</a></li>
+                <% elsif current_user.progress_level > 7 %>
                 <li><a href="#"> Wikipedia</a></li>
+                <% elsif current_user.progress_level > 8 %>
                 <li><a href="#"> 掲示板サイト</a></li>
+                <% end %>
+
             </ul>
         </div>
         <div class="home-button"></div> <!-- ホームボタン -->

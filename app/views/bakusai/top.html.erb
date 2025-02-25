@@ -34,6 +34,14 @@
                 </tr>
             </thead>
             <tbody>
+                <% if current_user.progress_level == 0 %>
+                <td></td>
+                <td><h4>まずは2人から話を聞こう</h4></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <% end %>
+                <% if current_user.progress_level > 1 %>
                 <tr>
                     <td>1</td>
                     <td><%= link_to 'テストテスト', bakusai_test_path%></td>
@@ -41,6 +49,7 @@
                     <td>10103</td>
                     <td>169</td>
                 </tr>
+                <% elsif current_user.progress_level > 2 %>
                 <tr>
                     <td>2</td>
                     <td><a href="#">野々市立水中学でいじめ？</a></td>
@@ -48,6 +57,7 @@
                     <td>66668</td>
                     <td>918</td>
                 </tr>
+                <% elsif current_user.progress_level > 3 %>
                 <tr>
                     <td>3</td>
                     <td><a href="#">人気投票！誰が最推し？</a></td>
@@ -55,6 +65,7 @@
                     <td>289</td>
                     <td>21</td>
                 </tr>
+                <% elsif current_user.progress_level > 4 %>
                 <tr>
                     <td>4</td>
                     <td><a href="#">万引きGメンの実態！</a></td>
@@ -62,6 +73,7 @@
                     <td>2010</td>
                     <td>168</td>
                 </tr>
+                <% elsif current_user.progress_level > 5 %>
                 <tr>
                     <td>5</td>
                     <td><a href="#">ブラック企業を晒すスレ</a></td>
@@ -69,6 +81,7 @@
                     <td>11191</td>
                     <td>196</td>
                 </tr>
+                <% end %>
             </tbody>
         </table>
     </main>
