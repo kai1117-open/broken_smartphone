@@ -8,10 +8,12 @@
 </h1>
 
 <div class="search-box">
-<input type="text" placeholder="Coogle で検索または URL を入力">
-<button>
+<%= form_with url: google_page_index_path, method: :get, local: true, class: "search-form" do %>
+<input type="text" name="q" placeholder="Coogle で検索または URL を入力">
+<button type="submit" class="search-btn">
     <img src="https://www.google.com/images/icons/material/system/2x/search_grey600_24dp.png" width="20" alt="検索">
 </button>
+<% end %>
 </div>
 
 <div class="shortcut-icons">
@@ -45,7 +47,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .search-box input {
-    flex: 1;
+    width: 530px;
     border: none;
     outline: none;
     font-size: 16px;

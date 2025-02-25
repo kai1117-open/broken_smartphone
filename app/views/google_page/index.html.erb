@@ -1,0 +1,76 @@
+<h2 class="search-query">「<%= @query %>」の検索結果</h2>
+
+<div class="search-results">
+  <% @search_results.each do |result| %>
+    <div class="search-item">
+      <div class="search-url"><%= result[:path] %></div>
+      <a href="<%= result[:path] %>" class="search-title"><%= result[:title] %></a>
+    </div>
+  <% end %>
+</div>
+
+
+<a href="<%= google_page_top_path %>" class="back-link">検索画面に戻る</a>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
+  .search-query {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .search-results {
+    margin-top: 10px;
+  }
+
+  .search-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .search-url {
+    font-size: 14px;
+    color: #006621;
+    margin-bottom: 5px;
+  }
+
+  .search-title {
+    font-size: 18px;
+    color: #1a0dab;
+    text-decoration: none;
+    display: block;
+  }
+
+  .search-title:hover {
+    text-decoration: underline;
+  }
+
+  .search-description {
+    font-size: 14px;
+    color: #4d5156;
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+
+  .back-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #1a0dab;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+</style>

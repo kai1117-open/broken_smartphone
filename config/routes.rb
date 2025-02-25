@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'line_page/keisuke',to: 'line_page#keisuke',as: 'line_page_keisuke'
 
   get 'google_page/top'
+  get 'google_page/index', to: 'google_page#index', as: 'google_page_index'
 
   get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
   get 'bakusai/test', to: 'bakusai#test', as: 'bakusai_test'
