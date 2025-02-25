@@ -13,36 +13,17 @@
   </div>
 </div>
 
+
 <div class="chat-body">
-    <div class="message-container friend">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/F_icon.svg" alt="Facebook" width="40">
-        <div class="message-content">
-            <div class="username">友達A</div>
-            <div class="message friend">こんにちは！</div>
-        </div>
-    </div>
-    <div class="message-container user">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
-        <div class="message-content">
-            <div class="username">自分</div>
-            <div class="message user">こんにちは！元気？</div>
-        </div>
-    </div>
-    <div class="message-container friend">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/512px-Instagram_icon.png" alt="Instagram" width="40">
-        <div class="message-content">
-            <div class="username">友達B</div>
-            <div class="message friend">元気だよ！最近どう？</div>
-        </div>
-    </div>
-    <div class="message-container user">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
-        <div class="message-content">
-            <div class="username">自分</div>
-            <div class="message user">まあまあかな。色々忙しいよ！</div>
-        </div>
-    </div>
+<% if current_user.progress_level == 0 %>
+<%= render "line_page/group-chat-list/group-chat-list-1" %>
+<% end %>
+<% if current_user.progress_level == 1 %>
+<%= render "line_page/group-chat-list/group-chat-list-1" %>
+<% end %>
 </div>
+
+
 
 <div class="chat-footer">
     <input type="text" placeholder="メッセージを入力...">
