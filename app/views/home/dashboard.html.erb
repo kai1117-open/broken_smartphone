@@ -1,3 +1,7 @@
+<header class="mystery-header">
+<h1><%= link_to '割れたスマホ', root_path, class: "home-link" %></h1>
+</header>
+
 <div class="menu">
   <%= link_to '拾ったスマホへ', broken_smartphone_top_path, class: 'menu-link' %>
   <%= link_to '連絡サイトへ', line_page_top_path, class: 'menu-link' %>
@@ -5,8 +9,38 @@
   <%= link_to '掲示板サイトへ', bakusai_top_path, class: 'menu-link' %>
 </div>
 
-
+<footer class="footer">
+<p>&copy; 2025 Broken Smartphone</p>
+</footer>
 <style>
+
+.home-link {
+  text-decoration: none; /* 下線を消す */
+  color: #ffffff; /* 白文字 */
+  transition: color 0.3s ease-in-out;
+}
+
+.mystery-header {
+  text-align: center;
+  padding: 20px 20px;
+  background: linear-gradient(to right, #1a1a1a, #000000);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mystery-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.7);
+    letter-spacing: 3px;
+}
+
+
 body, html {
   height: 100%;
   margin: 0;
@@ -75,4 +109,18 @@ body::after {
   opacity: 0.8;
 }
 
+
+.footer {
+    z-index: 1000;
+    background: linear-gradient(to right, #1a1a1a, #000000);
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
 </style>
