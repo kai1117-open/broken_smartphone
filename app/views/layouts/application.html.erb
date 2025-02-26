@@ -28,9 +28,40 @@
 </html>
 
 <style>
+/* フラッシュメッセージのコンテナ（画面上部に固定） */
+.flash-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  z-index: 1000;
+}
+
+/* フラッシュメッセージ（複数のメッセージが重ならないようにする） */
 .flash-message {
+  display: block;
+  padding: 10px;
+  margin-bottom: 10px; /* メッセージ間に間隔を持たせる */
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   animation: fadeOutAndHide 3s ease-in-out forwards;
-  opacity: 1;
+}
+
+/* 成功メッセージ */
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* エラーメッセージ */
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 /* フェードアウト + 高さを0にする */

@@ -4,7 +4,12 @@
 
 <div class="container text-center ">
 
-
+    <% flash.each do |key, message| %>
+        <div class="alert <%= key == 'notice' ? 'alert-success' : 'alert-danger' %> flash-message" role="alert">
+        <%= message %>
+        </div>
+    <% end %>
+    
 <div class="prologue">
     <h2 class = "text-center mt-1 mb-2 text-danger">プロローグ</h2>
     <p>片町のネオンが雨の舗道に滲んでいる。街は週末の喧騒に包まれ、</br>

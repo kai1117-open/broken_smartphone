@@ -8,7 +8,11 @@
   <%= link_to '検索サイトへ', google_page_top_path, class: 'menu-link' %>
   <%= link_to '掲示板サイトへ', bakusai_top_path, class: 'menu-link' %>
 </div>
-
+<div class="menu mt-5">
+<% if current_user.progress_level == 0 %>
+<%= render "home/progress_story/progress_1" %>
+<% end %>
+</div>
 <footer class="footer">
 <p>&copy; 2025 Broken Smartphone</p>
 </footer>

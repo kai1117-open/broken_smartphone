@@ -17,6 +17,14 @@
 
 <% if current_user.progress_level == 0 %>
 <%= render "line_page/keisuke-chat-list/keisuke-chat-list-1" %>
+
+<div class="message-container user">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+<div class="message-content">
+    <div class="username"><%= current_user.name %></div>
+    <div class="message user"></div>
+</div>
+
 <% end %>
 
 </div>
