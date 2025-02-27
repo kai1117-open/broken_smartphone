@@ -7,7 +7,7 @@ class LinePageController < ApplicationController
     if request.get?
       # GETリクエストの処理をここに書く
     elsif request.post?
-      if current_user.progress_level == 2
+      if current_user.progress_level <= 2
         group = current_user.line_group
         group.update(chat_1: params[:chat_1])
         # chat_1の文字列に「米松」または「茉莉」が含まれているかを判定
@@ -16,10 +16,10 @@ class LinePageController < ApplicationController
         else
           flash[:alert] = "不正解です"
         end
-        redirect_to line_page_group_path
+        redirect_to line_page_group_path and return
       end
 
-      if current_user.progress_level == 3
+      if current_user.progress_level <= 3
         group = current_user.line_group
         group.update(chat_2: params[:chat_2])
   
@@ -28,7 +28,7 @@ class LinePageController < ApplicationController
         else
           flash[:alert] = "不正解です"
         end
-        redirect_to line_page_group_path
+        redirect_to line_page_group_path and return
       end
 
 
@@ -52,7 +52,7 @@ class LinePageController < ApplicationController
       else
         flash[:alert] = "不正解です" 
       end
-      redirect_to line_page_hayato_path
+      redirect_to line_page_hayato_path and return
       end
 
     end
@@ -74,9 +74,9 @@ class LinePageController < ApplicationController
       if current_user.progress_level >= 1
         keisuke = current_user.keisuke
         keisuke.update(chat_1: params[:chat_1])
-      end
-      redirect_to line_page_keisuke_path
-
+      
+      redirect_to line_page_keisuke_path and return
+       end
 
     end
 

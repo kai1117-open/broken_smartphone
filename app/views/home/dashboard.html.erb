@@ -9,8 +9,10 @@
   <%= link_to '掲示板サイトへ', bakusai_top_path, class: 'menu-link' %>
 </div>
 <div class="menu mt-5">
-<% if current_user.progress_level <= 1 %>
+<% if current_user.progress_level <= 3 %>
 <%= render "home/progress_story/progress_1" %>
+<% elsif current_user.progress_level <= 7 %>
+<%= render "home/progress_story/progress_2" %>
 <% end %>
 </div>
 <footer class="footer">
