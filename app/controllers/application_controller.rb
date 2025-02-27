@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
     home_dashboard_path
   end
 
+  def after_sign_up_path_for(resource)
+    
+  end
+
   private
 
   def configure_permitted_parameters

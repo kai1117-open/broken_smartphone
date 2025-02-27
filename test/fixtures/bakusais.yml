@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  page_1: false
+  page_2: false
+
+two:
+  page_1: false
+  page_2: false
