@@ -1,11 +1,8 @@
 
-<% if current_user.progress_level == 2 %>
+<% if current_user.progress_level == 2 || current_user.progress_level <= 4 %>
 <%= render "line_page/group-chat-list/group-chat-list-1" %>
 <% end %>
 
-<% if current_user.progress_level == 3 %>
-<%= render "line_page/group-chat-list/group-chat-list-1" %>
-<% end %>
 
 
 <style>
