@@ -15,7 +15,7 @@
 
 <div class="chat-body">
 
-<% if current_user.progress_level == 1 %>
+<% if current_user.progress_level >= 1 %>
 <%= render "line_page/keisuke-chat-list/keisuke-chat-list-1" %>
 
 <div class="message-container user">

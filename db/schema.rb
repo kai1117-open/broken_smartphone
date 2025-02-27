@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
   end
 
   create_table "hayatos", force: :cascade do |t|
-    t.boolean "chat_1", default: false, null: false
+    t.string "chat_1"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

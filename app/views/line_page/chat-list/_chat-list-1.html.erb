@@ -17,7 +17,11 @@
         <img src="/assets/hayato.png" alt="室">
         <div class="chat-info">
             <h2>室谷隼人</h2>
+            <% if current_user.progress_level >= 2 %>
+            <p>グループチャットつくるわ！</p>
+            <% else %>
             <p>何でも聞いてくれ！</p>
+            <% end %>
         </div>
         
     </div>
@@ -30,7 +34,7 @@
         <img src="/assets/keisuke.png" alt="横">
         <div class="chat-info">
             <h2>横山圭介</h2>
-            <p>隼人に確認してもらってもいい？</p>
+            <p>教えてあげてくれる？</p>
         </div>
         
     </div>

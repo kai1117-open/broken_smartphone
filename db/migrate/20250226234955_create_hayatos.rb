@@ -1,7 +1,8 @@
 class CreateHayatos < ActiveRecord::Migration[6.1]
   def change
     create_table :hayatos do |t|
-      t.boolean :chat_1, default: false, null: false
+      t.string :chat_1, null: true
+      
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end

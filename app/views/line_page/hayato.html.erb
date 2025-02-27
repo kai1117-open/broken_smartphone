@@ -1,31 +1,8 @@
 
-<div class="chat-container">
-
-
-<div class="chat-header">
-  <div class="back-button">
-    <%= link_to line_page_top_path do %>
-      <span class="back-icon">&larr;</span> 戻る
-    <% end %>
-  </div>
-  <div class="header-title">
-  室谷隼人
-  </div>
-</div>
-
-<div class="chat-body">
-
-<% if current_user.progress_level == 1 %>
+<% if current_user.progress_level >= 1 %>
 <%= render "line_page/hayato-chat-list/hayato-chat-list-1" %>
 <% end %>
 
-</div>
-
-<div class="chat-footer">
-    <input type="text" placeholder="メッセージを入力...">
-    <button>▶</button>
-</div>
-</div>
 
 <style>
 body {
@@ -121,24 +98,32 @@ color: black;
 border-bottom-left-radius: 0;
 }
 .chat-footer {
-display: flex;
-padding: 10px;
-background: #f1f1f1;
+  display: flex;
+  padding: 10px;
+  background: #f1f1f1;
 }
-.chat-footer input {
-flex: 1;
-padding: 10px;
-border: none;
-border-radius: 20px;
-outline: none;
+
+.chat-form {
+  /* フォーム全体を flex 要素として扱ってもOK */
+  display: flex;
+  width: 100%;
 }
-.chat-footer button {
-background: #06C755;
-color: white;
-border: none;
-padding: 10px 15px;
-margin-left: 5px;
-border-radius: 50%;
-cursor: pointer;
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-button {
+  background: #06C755;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 </style>
