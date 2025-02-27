@@ -15,10 +15,10 @@
 
 
 <div class="chat-body">
-<% if current_user.progress_level == 0 %>
+<% if current_user.progress_level == 2 %>
 <%= render "line_page/group-chat-list/group-chat-list-1" %>
 <% end %>
-<% if current_user.progress_level == 1 %>
+<% if current_user.progress_level == 3 %>
 <%= render "line_page/group-chat-list/group-chat-list-1" %>
 <% end %>
 </div>

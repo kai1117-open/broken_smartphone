@@ -9,6 +9,8 @@ class LinePageController < ApplicationController
 
   end
   def keisuke
-    
+    if current_user.progress_level == 0
+      current_user.update(progress_level: 1)
+    end
   end
 end
