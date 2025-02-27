@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   get 'line_page/top',    to: 'line_page#top',    as: 'line_page_top'
   get 'line_page/group',  to: 'line_page#group',  as: 'line_page_group'
+  post 'line_page/group', to: 'line_page#group'
   get 'line_page/hayato',  to: 'line_page#hayato', as: 'line_page_hayato'
   post 'line_page/hayato', to: 'line_page#hayato'
-  get 'line_page/keisuke',to: 'line_page#keisuke',as: 'line_page_keisuke'
+  get 'line_page/keisuke', to: 'line_page#keisuke',as: 'line_page_keisuke'
+  post 'line_page/keisuke', to: 'line_page#keisuke'
 
 
   get 'google_page/top'

@@ -19,11 +19,10 @@ class LinePageController < ApplicationController
       hayato.update(chat_1: params[:chat_1])
       if current_user.hayato.chat_1&.include?("メール") || current_user.hayato.chat_1&.include?("写真")
         current_user.update(progress_level: 2)
-        redirect_to line_page_hayato_path
       else
         flash[:alert] = "不正解です" 
-        redirect_to line_page_hayato_path
       end
+      redirect_to line_page_hayato_path
       end
 
     end
@@ -31,9 +30,27 @@ class LinePageController < ApplicationController
 
 
   def keisuke
-    if current_user.progress_level == 0
-      current_user.update(progress_level: 1)
+    if request.get?
+
+
+      if current_user.progress_level == 0
+        current_user.update(progress_level: 1)
+      end
+
+
+    elsif request.post?
+
+
+      if current_user.progress_level >= 1
+        keisuke = current_user.keisuke
+        keisuke.update(chat_1: params[:chat_1])
+      end
+      redirect_to line_page_keisuke_path
+
+
     end
+
+
   end
 
 end

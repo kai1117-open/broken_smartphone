@@ -1,3 +1,21 @@
+
+<div class="chat-container">
+
+
+<div class="chat-header">
+  <div class="back-button">
+    <%= link_to line_page_top_path do %>
+      <span class="back-icon">&larr;</span> 戻る
+    <% end %>
+  </div>
+  <div class="header-title">
+  横山圭介
+  </div>
+</div>
+
+<div class="chat-body">
+
+
 <div class="message-container friend">
 <img src="/assets/keisuke.png" alt="Facebook" width="40">
 <div class="message-content">
@@ -37,3 +55,21 @@
 </div>
 </div>
 
+<% if current_user.keisuke.chat_1.present? %>
+  <div class="message-container user">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+    <div class="message-content">
+      <div class="username"><%= current_user.name %></div>
+      <div class="message user"><%= current_user.keisuke.chat_1 %></div>
+    </div>
+  </div>
+<% end %>
+
+<div class="chat-footer">
+  <%= form_with url: line_page_keisuke_path, method: :post, local: true, html: { class: "chat-form" } do %>
+    <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+    <%= submit_tag "▶", class: "chat-button" %>
+  <% end %>
+</div>
+
+</div>
