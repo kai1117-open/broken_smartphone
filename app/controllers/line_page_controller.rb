@@ -4,7 +4,20 @@ class LinePageController < ApplicationController
   end
 
   def group
+    if request.get?
 
+    elsif request.post?
+      if current_user.progress_level == 2
+        group = current_user.line_group
+        group.update(chat_1: params[:chat_1])
+        if current_user.line_group.chat_1&.include?("メール") || current_user.line_group.chat_1&.include?("写真")
+          current_user.update(progress_level: 3)
+        else
+          flash[:alert] = "不正解です" 
+        end
+        redirect_to line_page_group_path
+        end
+    end
   end
 
   def hayato

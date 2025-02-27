@@ -20,7 +20,7 @@
 <img src="/assets/hayato.png" alt="Facebook" width="40">
 <div class="message-content">
     <div class="username">室谷隼人</div>
-    <div class="message friend">こんにちは！</div>
+    <div class="message friend">スマホの事で、圭介から連絡あった？</div>
 </div>
 </div>
 
@@ -28,7 +28,15 @@
 <img src="/assets/hayato.png" alt="Instagram" width="40">
 <div class="message-content">
     <div class="username">室谷隼人</div>
-    <div class="message friend">元気だよ！最近どう？</div>
+    <div class="message friend">壊れてる雰囲気はあったし、期待はしてないけど、何か復元できそうなデータはあった？</div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">室谷隼人</div>
+    <div class="message friend">もし、あるなら、具体的に何が復元できそうか教えてほしい！</div>
 </div>
 </div>
 
@@ -41,7 +49,42 @@
 </div>
 </div>
 <% end %>
+<% if current_user.progress_level >= 2 %>
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">室谷隼人</div>
+    <div class="message friend">ありがとう！メールとか写真が分かるなら、俺たちで調べれば持ち主さがせるな！（笑）本当は、俺…あのスマホどこかで見たことある気がしてて</div>
+</div>
+</div>
 
+
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">室谷隼人</div>
+    <div class="message friend">ほら！俺って、いつも片町の居酒屋でバイトしてて、遊びまくってるやん？どこかは忘れたけど、持ち主とあった事ある気がしてて…</div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">室谷隼人</div>
+    <div class="message friend">無理だったら諦めて交番持っていくけど、交番に持って行っても、交番の人は持ち主を積極的に探しには行かないやん？</div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">室谷隼人</div>
+    <div class="message friend">だったら俺たちで持ち主を探したいって思ったから協力してくれるよな！</div>
+    <div class="message friend">って事でグループチャットつくるわ！</div>
+</div>
+</div>
+<% end %>
 </div>
 
 <div class="chat-footer">

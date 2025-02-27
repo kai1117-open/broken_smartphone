@@ -1,4 +1,22 @@
 
+
+<div class="chat-container">
+
+
+<div class="chat-header">
+  <div class="back-button">
+    <%= link_to line_page_top_path do %>
+      <span class="back-icon">&larr;</span> 戻る
+    <% end %>
+  </div>
+  <div class="header-title">
+    グループライン（3）
+  </div>
+</div>
+
+
+<div class="chat-body">
+
 <div class="message-container friend">
 <img src="/assets/hayato.png" alt="Facebook" width="40">
 <div class="message-content">
@@ -19,5 +37,18 @@
 <div class="message-content">
     <div class="username">自分</div>
     <div class="message user">まあまあかな。色々忙しいよ！</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+<div class="chat-footer">
+  <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+    <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+    <%= submit_tag "▶", class: "chat-button" %>
+  <% end %>
 </div>
 </div>
