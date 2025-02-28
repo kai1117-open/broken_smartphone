@@ -14,17 +14,14 @@ class GooglePageController < ApplicationController
   
     # 特定ワードごとの検索結果（部分一致対応）
     results = {
-      "秘密" => [
-        { title: "秘密のページ", path: google_page_top_path },
-        { title: "極秘情報", path: google_page_top_path }
+      "セラヴィ" => [
+        { title: "秘密のページ", path: google_page_top_path }
       ],
-      "謎解き大会" => [
-        { title: "謎解きのヒント", path: google_page_top_path },
-        { title: "謎を解け！", path: google_page_top_path }
+      "片町経営者10選" => [
+        { title: "謎解きのヒント", path: google_page_top_path }
       ],
-      "レアアイテム" => [
-        { title: "レアアイテム発見！", path: google_page_top_path },
-        { title: "限定アイテム情報", path: google_page_top_path }
+      "魚盛の酒場" => [
+        { title: "レアアイテム発見！", path: google_page_top_path }
       ]
     }
   
