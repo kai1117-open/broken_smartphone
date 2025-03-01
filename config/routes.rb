@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   get 'broken_smartphone/top'
+  get 'broken_smartphone/talk_history_1', to: 'broken_smartphone#talk_history_1', as: 'broken_smartphone_talk_history_1'
+  
+
 
   get 'line_page/top',    to: 'line_page#top',    as: 'line_page_top'
   get 'line_page/group',  to: 'line_page#group',  as: 'line_page_group'
