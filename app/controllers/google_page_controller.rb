@@ -15,7 +15,7 @@ class GooglePageController < ApplicationController
     # 特定ワードごとの検索結果（部分一致対応）
     results = {
       "セラヴィ" => [
-        { title: "秘密のページ", path: google_page_top_path }
+        { title: "セラヴィの人気嬢に対するスレ", path: bakusai_page_1_path }
       ],
       "片町経営者10選" => [
         { title: "謎解きのヒント", path: google_page_top_path }

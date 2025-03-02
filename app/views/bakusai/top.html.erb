@@ -39,10 +39,10 @@
                 <td></td>
                 <td></td>
                 <% end %>
-                <% if current_user.progress_level > 1 %>
+                <% if current_user.bakusai.page_1? %>
                 <tr>
                     <td>1</td>
-                    <td><%= link_to 'テストテスト', bakusai_test_path%></td>
+                    <td><%= link_to 'セラヴィの人気嬢に対するスレ', bakusai_page_1_path %></td>
                     <td>10103</td>
                     <td>169</td>
                 </tr>

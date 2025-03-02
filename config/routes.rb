@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'google_page/index', to: 'google_page#index', as: 'google_page_index'
 
   get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
+  get 'bakusai/page_1', to: 'bakusai#page_1', as: 'bakusai_page_1'
   get 'bakusai/test', to: 'bakusai#test', as: 'bakusai_test'
   root 'home#index'
   get 'home/dashboard', to: 'home#dashboard'
