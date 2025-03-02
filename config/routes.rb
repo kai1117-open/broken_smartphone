@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
   get 'bakusai/page_1', to: 'bakusai#page_1', as: 'bakusai_page_1'
-  get 'bakusai/test', to: 'bakusai#test', as: 'bakusai_test'
+  get 'bakusai/page_2', to: 'bakusai#page_2', as: 'bakusai_page_2'
+
+
   root 'home#index'
   get 'home/dashboard', to: 'home#dashboard'
 
