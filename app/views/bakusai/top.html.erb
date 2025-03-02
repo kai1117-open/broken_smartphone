@@ -46,28 +46,32 @@
                     <td>10103</td>
                     <td>169</td>
                 </tr>
-                <% elsif current_user.progress_level > 2 %>
+                <% end %>
+                <% if current_user.bakusai.page_2? %>
                 <tr>
                     <td>2</td>
                     <td><%= link_to '魚盛の酒場に行ったことあるヤツ集合', bakusai_page_2_path %></td>
                     <td>66668</td>
                     <td>918</td>
                 </tr>
-                <% elsif current_user.progress_level > 3 %>
+                <% end %>
+                <% if current_user.bakusai.page_1? %>
                 <tr>
                     <td>3</td>
                     <td><a href="#">人気投票！誰が最推し？</a></td>
                     <td>289</td>
                     <td>21</td>
                 </tr>
-                <% elsif current_user.progress_level > 4 %>
+                <% end %>
+                <% if current_user.bakusai.page_1? %>
                 <tr>
                     <td>4</td>
                     <td><a href="#">万引きGメンの実態！</a></td>
                     <td>2010</td>
                     <td>168</td>
                 </tr>
-                <% elsif current_user.progress_level > 5 %>
+                <% end %>
+                <% if current_user.bakusai.page_1? %>
                 <tr>
                     <td>5</td>
                     <td><a href="#">ブラック企業を晒すスレ</a></td>

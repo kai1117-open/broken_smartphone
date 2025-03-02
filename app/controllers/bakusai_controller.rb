@@ -22,5 +22,6 @@ class BakusaiController < ApplicationController
 
     # `page_1` を `true` に更新
     bakusai.update(page_2: true)
+    current_user.update(progress_level: 5)
   end
 end
