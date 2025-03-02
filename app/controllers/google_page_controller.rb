@@ -18,7 +18,7 @@ class GooglePageController < ApplicationController
         { title: "セラヴィの人気嬢に対するスレ", path: bakusai_page_1_path }
       ],
       "片町経営者10選" => [
-        { title: "謎解きのヒント", path: google_page_top_path }
+        { title: "片町経営者10選インタビュー記事", path: google_page_page_1_path }
       ],
       "魚盛の酒場" => [
         { title: "レアアイテム発見！", path: google_page_top_path }
@@ -32,7 +32,16 @@ class GooglePageController < ApplicationController
     @search_results = [{ title: "検索結果が見つかりませんでした", path: "" }] if @search_results.empty?
   end
   
-  
+  def page_1
+        # 仮に現在のログインユーザーがいる場合（Devise などを想定）
+        current_user_id = current_user.id
+
+        # `user_id` に対応する `google` レコードを探す（なければ作成）
+        google = Google.find_or_create_by(user_id: current_user_id)
+    
+        # `page_1` を `true` に更新
+        google.update(page_1: true)
+  end
   
 
 end

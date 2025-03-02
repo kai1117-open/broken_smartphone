@@ -1,0 +1,164 @@
+
+    <header>
+        <div class="logo">
+            <h1>Neo Press</h1>
+        </div>
+    </header>
+
+    <main>
+        
+
+
+
+        <section class="articles">
+            <div class="article">
+                <img src="https://via.placeholder.com/400x250" alt="記事画像">
+                <h3>記事タイトル1</h3>
+                <p>記事の概要をここに表示。</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/400x250" alt="記事画像">
+                <h3>記事タイトル2</h3>
+                <p>記事の概要をここに表示。</p>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/400x250" alt="記事画像">
+                <h3>記事タイトル3</h3>
+                <p>記事の概要をここに表示。</p>
+            </div>
+        </section>
+        <%= link_to '戻る', "javascript:history.back()", class: 'btn btn-primary' %>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Neo Press. All rights reserved.</p>
+    </footer>
+
+
+
+
+<style>
+/* 全体のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #222;
+}
+
+/* フッター */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* メインコンテンツ */
+main {
+    padding-top: 60px; /* ヘッダーの高さ分 */
+    padding-bottom: 50px; /* フッターの高さ分 */
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* 戻るボタン */
+.back-button {
+    margin: 20px;
+    padding: 10px 15px;
+    background: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #005bb5;
+}
+
+/* メインビジュアル */
+.featured {
+    position: relative;
+    text-align: center;
+}
+
+.featured img {
+    width: 100%;
+    height: auto;
+}
+
+.featured-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    width: 80%;
+    text-align: center;
+}
+
+.featured-text h2 {
+    margin-bottom: 10px;
+}
+
+/* 記事リスト */
+.articles {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.article {
+    text-align: center;
+    width: 30%;
+}
+
+.article img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.article h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.article p {
+    margin: 10px 0;
+}
+</style>

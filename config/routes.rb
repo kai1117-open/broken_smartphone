@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get 'google_page/top'
   get 'google_page/index', to: 'google_page#index', as: 'google_page_index'
+  get 'google_page/page_1', to: 'google_page#page_1', as: 'google_page_page_1'
 
   get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
   get 'bakusai/page_1', to: 'bakusai#page_1', as: 'bakusai_page_1'
