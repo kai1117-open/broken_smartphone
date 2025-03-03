@@ -17,33 +17,16 @@
 
 
 <main class="chat-list">
-<% if current_user.progress_level == 0 %>
+
+<% if current_user.progress_level <= 4 %>
 <%= render "line_page/chat-list/chat-list-1" %>
 <% end %>
 
-<% if current_user.progress_level == 1 %>
-<%= render "line_page/chat-list/chat-list-1" %>
+<% if current_user.progress_level >= 5 %>
+<%= render "line_page/chat-list/chat-list-2" %>
 <% end %>
 
-<% if current_user.progress_level == 2 %>
-<%= render "line_page/chat-list/chat-list-1" %>
-<% end %>
 
-<% if current_user.progress_level == 3 %>
-<%= render "line_page/chat-list/chat-list-1" %>
-<% end %>
-
-<% if current_user.progress_level == 4 %>
-<%= render "line_page/chat-list/chat-list-1" %>
-<% end %>
-
-<% if current_user.progress_level == 5 %>
-<%= render "line_page/chat-list/chat-list-1" %>
-<% end %>
-
-<% if current_user.progress_level == 6 %>
-<%= render "line_page/chat-list/chat-list-1" %>
-<% end %>
 
 
 </main>

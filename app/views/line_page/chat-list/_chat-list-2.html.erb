@@ -1,33 +1,52 @@
-<%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
+<% if current_user.progress_level >= 2 %>
+    <%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
     <div class="chat-item">
         <img src="/assets/kanazawaeki.png" alt="ユーザー">
         <div class="chat-info">
             <h2>グループチャット（3）</h2>
-            <p>確認してみて</p>
+            <% if current_user.progress_level == 2 %>
+            <p>ここに連絡して！</p>
+            <% elsif current_user.progress_level == 3%>
+            <p>どこの経営者なんやろ？</p>
+            <%else%>
+            <p>それぞれ調べてみようぜ</p>
+            <%end%>
         </div>
-        <span class="badge">!</span>
+        
     </div>
-  <% end %>
-  
-  <%= link_to line_page_hayato_path, style: "text-decoration:none; color:inherit;" do %>
-  <div class="chat-item">
-      <img src="/assets/hayato.png" alt="室">
-      <div class="chat-info">
-          <h2>室谷隼人</h2>
-          <p>何でも聞いてくれ！</p>
-      </div>
-      <span class="badge">!</span>
-  </div>
-  <% end %>
-  
-  <%= link_to line_page_keisuke_path, style: "text-decoration:none; color:inherit;" do %>
-  <div class="chat-item">
-      <img src="/assets/keisuke.png" alt="横">
-      <div class="chat-info">
-          <h2>横山圭介</h2>
-          <p>待ってて</p>
-      </div>
-      <span class="badge">!</span>
-  </div>
-  <% end %>
-  
+    <% end %>
+<% end %>
+
+<% if current_user.progress_level >= 1 %>
+    <%= link_to line_page_hayato_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/hayato.png" alt="室">
+        <div class="chat-info">
+            <h2>室谷隼人</h2>
+            <% if current_user.progress_level >= 2 %>
+            <p>って事でグループチャットつくるわ！</p>
+            <% else %>
+            <p>もし、あるなら、具体的に何が復元できそうか教えてほしい！</p>
+            <% end %>
+        </div>
+        
+    </div>
+    <% end %>
+<% end %>
+
+<% if current_user.progress_level >= 0 %>
+    <%= link_to line_page_keisuke_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/keisuke.png" alt="横">
+        <div class="chat-info">
+            <h2>横山圭介</h2>
+            <% if current_user.keisuke.chat_1.present? %>
+            <p><%= current_user.keisuke.chat_1 %></p>
+            <% else %>
+            <p>教えてあげてくれる？</p>
+            <% end %>
+        </div>
+        
+    </div>
+    <% end %>
+<% end %>

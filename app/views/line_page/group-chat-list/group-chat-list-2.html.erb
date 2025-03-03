@@ -1,0 +1,56 @@
+<div class="chat-container">
+
+  <div class="chat-header">
+    <div class="back-button">
+      <%= link_to line_page_top_path do %>
+        <span class="back-icon">&larr;</span> 戻る
+      <% end %>
+    </div>
+    <div class="header-title">
+      グループライン（3）
+    </div>
+  </div>
+
+  <div class="chat-body">
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          グループチャット作った！</br>
+          圭介は復元できたデータは</br>
+          ここで共有してくれ！
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">おけ</div>
+        <div class="message friend">
+          とりあえず、トーク履歴が何とか</br>
+          一部復元できたから、共有するわ
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="chat-footer">
+    <% if current_user.progress_level >= 3 %>
+      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+        <%= text_field_tag :chat_2, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+        <%= submit_tag "▶", class: "chat-button" %>
+      <% end %>
+    <% else %>
+      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+        <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+        <%= submit_tag "▶", class: "chat-button" %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
