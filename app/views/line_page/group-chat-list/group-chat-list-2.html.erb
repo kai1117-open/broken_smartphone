@@ -40,7 +40,7 @@
   </div>
 
   <div class="chat-footer">
-    <% if current_user.progress_level >= 3 %>
+    <% if current_user.progress_level >= 6 %>
       <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
         <%= text_field_tag :chat_2, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>
