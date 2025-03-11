@@ -6,4 +6,12 @@ class BrokenSmartphoneController < ApplicationController
 
   end
 
+
+  def photograph_history_1
+
+  end
+
+  def memo_history_1
+    
+  end
 end

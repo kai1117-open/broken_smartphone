@@ -15,6 +15,15 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
   create_table "bakusais", force: :cascade do |t|
     t.boolean "page_1", default: false, null: false
     t.boolean "page_2", default: false, null: false
+    t.boolean "page_3", default: false, null: false
+    t.boolean "page_4", default: false, null: false
+    t.boolean "page_5", default: false, null: false
+    t.boolean "page_6", default: false, null: false
+    t.boolean "page_7", default: false, null: false
+    t.boolean "page_8", default: false, null: false
+    t.boolean "page_9", default: false, null: false
+    t.boolean "page_10", default: false, null: false
+    t.boolean "page_11", default: false, null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -24,6 +33,15 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
   create_table "googles", force: :cascade do |t|
     t.boolean "page_1", default: false, null: false
     t.boolean "page_2", default: false, null: false
+    t.boolean "page_3", default: false, null: false
+    t.boolean "page_4", default: false, null: false
+    t.boolean "page_5", default: false, null: false
+    t.boolean "page_6", default: false, null: false
+    t.boolean "page_7", default: false, null: false
+    t.boolean "page_8", default: false, null: false
+    t.boolean "page_9", default: false, null: false
+    t.boolean "page_10", default: false, null: false
+    t.boolean "page_11", default: false, null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,6 +50,18 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
 
   create_table "hayatos", force: :cascade do |t|
     t.string "chat_1"
+    t.string "chat_2"
+    t.string "chat_3"
+    t.string "chat_4"
+    t.string "chat_5"
+    t.string "chat_6"
+    t.string "chat_7"
+    t.string "chat_8"
+    t.string "chat_9"
+    t.string "chat_10"
+    t.string "chat_11"
+    t.string "chat_12"
+    t.string "chat_13"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -40,6 +70,18 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
 
   create_table "keisukes", force: :cascade do |t|
     t.string "chat_1"
+    t.string "chat_2"
+    t.string "chat_3"
+    t.string "chat_4"
+    t.string "chat_5"
+    t.string "chat_6"
+    t.string "chat_7"
+    t.string "chat_8"
+    t.string "chat_9"
+    t.string "chat_10"
+    t.string "chat_11"
+    t.string "chat_12"
+    t.string "chat_13"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,6 +92,16 @@ ActiveRecord::Schema.define(version: 2025_02_26_235032) do
     t.string "chat_1"
     t.string "chat_2"
     t.string "chat_3"
+    t.string "chat_4"
+    t.string "chat_5"
+    t.string "chat_6"
+    t.string "chat_7"
+    t.string "chat_8"
+    t.string "chat_9"
+    t.string "chat_10"
+    t.string "chat_11"
+    t.string "chat_12"
+    t.string "chat_13"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
