@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'broken_smartphone/top'
   get 'broken_smartphone/talk_history_1', to: 'broken_smartphone#talk_history_1', as: 'broken_smartphone_talk_history_1'
-  
+  get 'broken_smartphone/hotograph_history_1', to: 'broken_smartphone#hotograph_history_1', as: 'broken_smartphone_hotograph_history_1'
+  get 'broken_smartphone/memo_history_1', to: 'broken_smartphone#memo_history_1', as: 'broken_smartphone_memo_history_1'
 
 
   get 'line_page/top',    to: 'line_page#top',    as: 'line_page_top'
@@ -17,11 +18,15 @@ Rails.application.routes.draw do
   get 'google_page/top'
   get 'google_page/index', to: 'google_page#index', as: 'google_page_index'
   get 'google_page/page_1', to: 'google_page#page_1', as: 'google_page_page_1'
+  get 'google_page/page_2', to: 'google_page#page_2', as: 'google_page_page_2'
+  get 'google_page/page_3', to: 'google_page#page_3', as: 'google_page_page_3'
+  get 'google_page/page_4', to: 'google_page#page_4', as: 'google_page_page_4'
 
   get 'bakusai/top', to: 'bakusai#top', as: 'bakusai_top'
   get 'bakusai/page_1', to: 'bakusai#page_1', as: 'bakusai_page_1'
   get 'bakusai/page_2', to: 'bakusai#page_2', as: 'bakusai_page_2'
-
+  get 'bakusai/page_3', to: 'bakusai#page_3', as: 'bakusai_page_3'
+  get 'bakusai/page_4', to: 'bakusai#page_4', as: 'bakusai_page_4'
 
   root 'home#index'
   get 'home/dashboard', to: 'home#dashboard'
