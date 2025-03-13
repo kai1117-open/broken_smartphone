@@ -50,13 +50,13 @@ class LinePageController < ApplicationController
         process_group_step(:chat_2, params[:chat_2], ->(input){ input == "キャンペル" }, 4)
       when 5
         # 進捗レベル5：chat_4の入力検証（例：期待する値と一致するか）
-        process_group_step(:chat_3, params[:chat_3], ->(input){ input.include?("例のキーワード") }, 6)
+        process_group_step(:chat_3, params[:chat_3], ->(input){ input.include?("瀬戸ビル") }, 6)
       when 6
         # 進捗レベル6：chat_5の入力検証（例：正規表現で判定）
-        process_group_step(:chat_4, params[:chat_4], ->(input){ input.include?("例のキーワード") }, 7)
+        process_group_step(:chat_4, params[:chat_4], ->(input){ input.include?("加納卓也") }, 7)
       when 7
         # 進捗レベル7：chat_6の入力検証（例：複数のキーワードを含むか）
-        process_group_step(:chat_5, params[:chat_5], ->(input){ input.include?("例のキーワード") }, 8)
+        process_group_step(:chat_5, params[:chat_5], ->(input){ input.include?("川口会") }, 8)
       when 8
         # 進捗レベル8：chat_7の入力検証（例：特定の文字列で始まるか）
         process_group_step(:chat_6, params[:chat_6], ->(input){ input.include?("例のキーワード") }, 9)

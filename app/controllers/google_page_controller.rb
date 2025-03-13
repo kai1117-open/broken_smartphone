@@ -15,6 +15,24 @@ class GooglePageController < ApplicationController
     google.update(page_1: true)
   end
 
+
+  def page_2
+    google = Google.find_or_create_by(user_id: current_user.id)
+    google.update(page_2: true)
+  end
+
+
+  def page_3
+    google = Google.find_or_create_by(user_id: current_user.id)
+    google.update(page_3: true)
+  end
+
+
+  def page_4
+    google = Google.find_or_create_by(user_id: current_user.id)
+    google.update(page_4: true)
+  end
+
   private
 
   # クエリ文字列を正規化して取得
