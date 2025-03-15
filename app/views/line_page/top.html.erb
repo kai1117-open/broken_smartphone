@@ -27,6 +27,19 @@
 <% end %>
 
 
+<% if current_user.progress_level >= 5 %>
+    <%= link_to line_page_history_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+      <img src="/assets/kanazawaeki.png" alt="ユーザー">
+        <div class="chat-info">
+            <h2>グループチャットの履歴</h2>
+
+        </div>
+        
+    </div>
+    <% end %>
+<% end %>
+
 
 
 </main>

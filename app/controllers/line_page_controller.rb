@@ -5,6 +5,10 @@ class LinePageController < ApplicationController
     # トップページの処理が必要なら記述
   end
 
+  def history
+
+  end
+
   # keisukeアクション
   # GETリクエスト時に進捗レベル0ならレベル1に更新
   # POSTリクエスト時はchat_1を更新（この例では検証処理はなし）

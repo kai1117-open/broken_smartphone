@@ -33,22 +33,31 @@
       </tr>
     </thead>
     <tbody>
-<% if current_user.google.page_1? %>
-      <tr>
-        <td>片町経営者10選インタビュー記事</td>
-        <td>
-          <%= link_to '記事を読む', google_page_page_1_path, class: "btn btn-primary btn-sm" %>
-        </td>
-      </tr>
-<% end %>
-<% if current_user.google.page_2? %>
-      <tr>
-        <td>インタビュー記事</td>
-        <td>
-          <%= link_to '記事を読む', google_page_page_2_path, class: "btn btn-primary btn-sm" %>
-        </td>
-      </tr>
-<% end %>
+    <% pages = {
+      1 => { title: "片町経営者10選インタビュー記事", path: google_page_page_1_path },
+      2 => { title: "闇の財産？噂のビルを調査してみた", path: google_page_page_2_path },
+      3 => { title: "東京の夜景を独占取材！", path: google_page_page_3_path },
+      4 => { title: "隠れ家レストランの秘密", path: google_page_page_4_path },
+      5 => { title: "最新ガジェット徹底解説", path: google_page_page_5_path },
+      6 => { title: "未来の都市計画を探る", path: google_page_page_6_path },
+      7 => { title: "伝統と革新の融合、京都の魅力", path: google_page_page_7_path },
+      8 => { title: "話題のスポーツ選手の素顔に迫る", path: google_page_page_8_path },
+      9 => { title: "経済の未来を読む", path: google_page_page_9_path },
+      10 => { title: "国際情勢の裏側を暴く", path: google_page_page_10_path },
+      11 => { title: "IT業界の革命児にインタビュー", path: google_page_page_11_path }
+    } %>
+    
+    <% pages.each do |page_number, page_info| %>
+      <% if current_user.google.send("page_#{page_number}?") %>
+        <tr>
+          <td><%= page_info[:title] %></td>
+          <td>
+            <%= link_to '記事を読む', page_info[:path], class: "btn btn-primary btn-sm" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+    
     </tbody>
   </table>
 </div>

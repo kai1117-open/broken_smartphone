@@ -56,6 +56,15 @@ class GooglePageController < ApplicationController
       ],
       "魚盛の酒場" => [
         { title: "魚盛の酒場に行ったことあるヤツ集合", path: bakusai_page_2_path }
+      ],
+      "瀬戸ビル" => [
+        { title: "瀬戸ビルの常連あつまれ", path: bakusai_page_3_path }
+      ],
+      "加納卓也" => [
+        { title: "闇の財産？噂のビルを調査してみた", path: google_page_page_2_path }
+      ],
+      "米松文也" => [
+        { title: "いま片町で1番調子にのってる奴", path: bakusai_page_4_path }
       ]
     }
   end
