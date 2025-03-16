@@ -1,26 +1,35 @@
 <div class="chat-container">
-
   <div class="chat-header">
     <div class="back-button">
       <%= link_to line_page_top_path do %>
         <span class="back-icon">&larr;</span> 戻る
       <% end %>
     </div>
-    <div class="header-title">
-      グループライン（3）
-    </div>
+    <div class="header-title">グループライン（3）</div>
   </div>
 
   <div class="chat-body">
 
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          このメモは…子供？</br>
+          病院に通ってたって事は病気だった？</br>
+        </div>
+      </div>
+    </div>
 
     <div class="message-container friend">
       <img src="/assets/keisuke.png" alt="Instagram" width="40">
       <div class="message-content">
         <div class="username">横山圭介</div>
-        <div class="message friend">ごめん</br>
-                                    復元に忙しくて、調べれないから</br>
-                                    調査お願いしていい？</div>
+        <div class="message friend">
+          定期的に通ってる感じだよね</br>
+          病院特定しても、</br>タイミング分からんし</br>
+          病院に迷惑かけるし…どうしようか…
+        </div>
       </div>
     </div>
 
@@ -28,65 +37,134 @@
       <img src="/assets/hayato.png" alt="Facebook" width="40">
       <div class="message-content">
         <div class="username">室谷隼人</div>
-        <div class="message friend">OK！無理しないでな</br>
-                                    <%= current_user.name %>も無理せず調査しよ</br>
-                                    もし、持ち主がいそうな場所の名前分かったら教えて！
+        <div class="message friend">
+          米松の居酒屋でバイトしてる友達に</br>
+          「オーナーいつ来るか分かる？」って</br>
+          聞いたんけど…</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          「毎日、オーナーは来てたけど最近は</br>
+            まったく来てないみたいで、店長も</br>
+            来ない事は初めてで混乱してた」</br>
+            って言ってた</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">
+          キャバクラの方は分からんけど</br>
+          店から米松へのコンタクトはムズイか</br>
+          ってなると妻の米松茉莉を探して</br>
+          妻にスマホを渡す方が良いな
         </div>
       </div>
     </div>
 
 
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          正直、ここで辞めて交番にスマホを</br>
+          届ければ、終わらせる事はできる</br>
+          けど…どうしよっか…</br>
+          俺が言い始めた事だし…うーん…</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend"><%= link_to 'トーク履歴-2', broken_smartphone_talk_history_2_path %></div>
+    </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">
+        とりあえず、</br>
+        復元できたから共有するけど</br>
+        やばくない？</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/hayato.png" alt="Facebook" width="40">
+    <div class="message-content">
+      <div class="username">室谷隼人</div>
+      <div class="message friend">
+        喜一って息子の名前だよな</br>
+        これは、ネグレクトだろ</br>
+      </div>
+    </div>
+  </div>
 
   </div>
 
   <div class="chat-footer">
     <% case current_user.progress_level %>
-    <% when 2 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 3 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_2, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 5 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_3, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 6 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_4, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 7 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_5, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 8 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_6, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 9 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_7, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 10 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_8, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
-    <% when 11 %>
-      <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
-        <%= text_field_tag :chat_9, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-        <%= submit_tag "▶", class: "chat-button" %>
-      <% end %>
+      <% when 2 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 3 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_2, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 5 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_3, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 6 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_4, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 7 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_5, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 9 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_6, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 10 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_7, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 11 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_8, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 12 %>
+        <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_9, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
     <% end %>
   </div>
-
 </div>

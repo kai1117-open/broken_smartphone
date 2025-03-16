@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'broken_smartphone/top'
   get 'broken_smartphone/talk_history_1', to: 'broken_smartphone#talk_history_1', as: 'broken_smartphone_talk_history_1'
+  get 'broken_smartphone/talk_history_2', to: 'broken_smartphone#talk_history_2', as: 'broken_smartphone_talk_history_2'
   get 'broken_smartphone/hotograph_history_1', to: 'broken_smartphone#hotograph_history_1', as: 'broken_smartphone_hotograph_history_1'
   get 'broken_smartphone/memo_history_1', to: 'broken_smartphone#memo_history_1', as: 'broken_smartphone_memo_history_1'
 

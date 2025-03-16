@@ -11,8 +11,10 @@
 <div class="menu mt-5">
 <% if current_user.progress_level <= 3 %>
 <%= render "home/progress_story/progress_1" %>
-<% elsif current_user.progress_level <= 7 %>
+<% elsif current_user.progress_level <= 8 %>
 <%= render "home/progress_story/progress_2" %>
+<% elsif current_user.progress_level <= 12 %>
+<%= render "home/progress_story/progress_3" %>
 <% end %>
 </div>
 <footer class="footer">

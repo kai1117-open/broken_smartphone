@@ -8,21 +8,11 @@
             <% end %>
                 <% if current_user.progress_level >= 2 %>
                 <li><%= link_to 'トーク履歴-1', broken_smartphone_talk_history_1_path %></li>
-                <% elsif current_user.progress_level > 3 %>
-                <li><a href="#"> トーク履歴-1</a></li>
-                <% elsif current_user.progress_level > 4 %>
-                <li><a href="#"> Twitter</a></li>
-                <% elsif current_user.progress_level > 5 %>
-                <li><a href="#"> Instagram</a></li>
-                <% elsif current_user.progress_level > 6 %>
-                <li><a href="#"> Amazon</a></li>
-                <% elsif current_user.progress_level > 7 %>
-                <li><a href="#"> Yahoo!ニュース</a></li>
-                <% elsif current_user.progress_level > 8 %>
-                <li><a href="#"> Wikipedia</a></li>
-                <% elsif current_user.progress_level > 9 %>
-                <li><a href="#"> 掲示板サイト</a></li>
                 <% end %>
+                <% if current_user.progress_level >= 9 %>
+                <li><%= link_to 'メモ-1', broken_smartphone_memo_history_1_path %></li>
+                <% end %>
+
 
             </ul>
         </div>

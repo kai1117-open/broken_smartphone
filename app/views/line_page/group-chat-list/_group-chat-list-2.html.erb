@@ -30,7 +30,7 @@
         <div class="username">室谷隼人</div>
         <div class="message friend">OK！無理しないでな</br>
                                     <%= current_user.name %>も無理せず調査しよ</br>
-                                    もし、持ち主がいそうな場所の名前分かったら教えて！
+                                    もし、持ち主がいそうな</br>場所の名前分かったら教えて！
         </div>
       </div>
     </div>
@@ -155,9 +155,29 @@
         <div class="username">横山圭介</div>
         <div class="message friend">おお…冴えてるね</br>
                                     確かに、個人の居場所の特定より</br>
-                                    会社を特定できれば、</br>そこに行けば良いし</div>
+                                    会社を特定できれば、</br>そこに行けば良いな</div>
       </div>
     </div>
+
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">持ち主が米松文也って</br>
+                                    フルネームが分かったから</br>
+                                    調べたら、米松文也のスレ見つけた</div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend"><%= link_to 'いま片町で1番調子にのってる奴', bakusai_page_4_path %></div>
+    </div>
+    </div>
+
 
     <div class="message-container friend">
     <img src="/assets/keisuke.png" alt="Instagram" width="40">
@@ -180,7 +200,87 @@
     <% end %>
 
 
+  <% if current_user.line_group.chat_5.present? %>
+  <div class="message-container user">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+  <div class="message-content">
+      <div class="username">自分</div>
+      <div class="message user"><%= current_user.line_group.chat_5 %></div>
   </div>
+  </div>
+  <% end %>
+
+
+
+    <% if current_user.progress_level >= 8 %>
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+      <div class="username">横山圭介</div>
+      <div class="message friend">川口会！？</br>
+                                  初めて聞いたけど・・・</br>
+                                  なんの会社なんだろう？</br>
+                                  2人は知ってる？川口会？</div>
+    </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">いやいやお前！</br>
+                                    昔から片町を牛耳っている組やぞ！</br>
+                                    ヤクザだ！行けないし会いたくない…
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+      <div class="username">横山圭介</div>
+      <div class="message friend">なるほど…ヤクザだと</br>
+                                  場所が分かっても渡せないね</br>
+                                  やっぱり持ち主の米松を探すか</div>
+    </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">お前もずっと地元に住んでるから</br>
+                                    てっきり知っているかと思ったわ</br>
+                                    そういえば、復元はどう？
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+      <div class="username">横山圭介</div>
+      <div class="message friend">なんとか少し復元できてる</br>
+                                  米松の場所の特定になればいいけど</br>
+                                  共有するね</div>
+    </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend"><%= link_to 'メモ-1', broken_smartphone_memo_history_1_path %></div>
+    </div>
+    </div>
+
+
+    <% end %>
+  </div>
+
+
+
+
 
   <div class="chat-footer">
     <% case current_user.progress_level %>
@@ -209,22 +309,22 @@
         <%= text_field_tag :chat_5, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>
       <% end %>
-    <% when 8 %>
+    <% when 9 %>
       <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
         <%= text_field_tag :chat_6, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>
       <% end %>
-    <% when 9 %>
+    <% when 10 %>
       <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
         <%= text_field_tag :chat_7, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>
       <% end %>
-    <% when 10 %>
+    <% when 11 %>
       <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
         <%= text_field_tag :chat_8, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>
       <% end %>
-    <% when 11 %>
+    <% when 12 %>
       <%= form_with url: line_page_group_path, method: :post, local: true, html: { class: "chat-form" } do %>
         <%= text_field_tag :chat_9, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
         <%= submit_tag "▶", class: "chat-button" %>

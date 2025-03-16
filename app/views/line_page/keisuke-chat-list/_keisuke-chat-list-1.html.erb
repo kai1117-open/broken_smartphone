@@ -57,12 +57,11 @@
     </div>
   </div>
 <% end %>
-
+</div>
 <div class="chat-footer">
   <%= form_with url: line_page_keisuke_path, method: :post, local: true, html: { class: "chat-form" } do %>
     <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
     <%= submit_tag "▶", class: "chat-button" %>
   <% end %>
 </div>
-
 </div>

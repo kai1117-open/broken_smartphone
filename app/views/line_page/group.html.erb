@@ -1,8 +1,10 @@
 
 <% if current_user.progress_level == 2 || current_user.progress_level <= 4 %>
 <%= render "line_page/group-chat-list/group-chat-list-1" %>
-<% elsif current_user.progress_level <= 7 %>
+<% elsif current_user.progress_level <= 8 %>
 <%= render "line_page/group-chat-list/group-chat-list-2" %>
+<% elsif current_user.progress_level <= 12 %>
+<%= render "line_page/group-chat-list/group-chat-list-3" %>
 <% end %>
 
 
