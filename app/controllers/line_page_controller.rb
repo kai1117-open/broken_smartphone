@@ -61,18 +61,18 @@ class LinePageController < ApplicationController
       when 7
         # 進捗レベル7：chat_6の入力検証（例：複数のキーワードを含むか）
         process_group_step(:chat_5, params[:chat_5], ->(input){ input.include?("川口会") }, 8)
-      when 8
-        # 進捗レベル8：chat_7の入力検証（例：特定の文字列で始まるか）
-        process_group_step(:chat_6, params[:chat_6], ->(input){ input.include?("例のキーワード") }, 9)
       when 9
-        # 進捗レベル9：chat_8の入力検証（例：特定の文字列で終わるか）
-        process_group_step(:chat_7, params[:chat_7], ->(input){ input.include?("例のキーワード") }, 10)
+        # 進捗レベル8：chat_7の入力検証（例：特定の文字列で始まるか）
+        process_group_step(:chat_6, params[:chat_6], ->(input){ input.include?("野崎山小学校") }, 10)
       when 10
-        # 進捗レベル10：chat_9の入力検証（例：最終キーワードを含むか）
-        process_group_step(:chat_8, params[:chat_8], ->(input){ input.include?("例のキーワード") }, 11)
+        # 進捗レベル9：chat_8の入力検証（例：特定の文字列で終わるか）
+        process_group_step(:chat_7, params[:chat_7], ->(input){ input.include?("例のキーワード") }, 11)
       when 11
+        # 進捗レベル10：chat_9の入力検証（例：最終キーワードを含むか）
+        process_group_step(:chat_8, params[:chat_8], ->(input){ input.include?("例のキーワード") }, 12)
+      when 12
         # 拡張性していく
-        process_group_step(:chat_9, params[:chat_9], ->(input){ input.include?("例のキーワード") }, 12)
+        process_group_step(:chat_9, params[:chat_9], ->(input){ input.include?("例のキーワード") }, 13)
       else
         flash[:alert] = "無効な状態です"
       end
