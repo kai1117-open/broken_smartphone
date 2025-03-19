@@ -73,6 +73,9 @@ class LinePageController < ApplicationController
       when 12
         # 拡張性していく
         process_group_step(:chat_9, params[:chat_9], ->(input){ input.include?("例のキーワード") }, 13)
+      when 13
+        # 拡張性していく
+        process_group_step(:chat_10, params[:chat_9], ->(input){ input.include?("例のキーワード") }, 14)
       else
         flash[:alert] = "無効な状態です"
       end
