@@ -62,6 +62,9 @@ class GooglePageController < ApplicationController
       ],
       "加納卓也" => [
         { title: "闇の財産？噂のビルを調査してみた", path: google_page_page_2_path }
+      ],
+      "黒山少年自然の家" => [
+        { title: "黒山少年自然の家-活動報告", path: google_page_page_3_path }
       ]
     }
   end

@@ -1,145 +1,276 @@
-<header>
-<div class="logo">
-  <h1>Neo Press</h1>
-</div>
-</header>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">黒山ろくろく自然の家</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">ひとくちコクサンろく</a></li>
+          <li><a href="#">自然体験</a></li>
+          <li><a href="#">宿泊案内</a></li>
+          <li><a href="#">通年プログラム</a></li>
+          <li><a href="#">主催者情報</a></li>
+          <li><a href="#">アクセス案内</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="reserve-button">ご予約案内</a>
+    </div>
+  </header>
 
-<!-- ヘッダーとメインの間のタイトルバナー -->
-<div class="title-banner">
-<h2>片町経営者10選</h2>
-<p>六尾市出身の米松社長へのインタビュー</p>
-</div>
-
-<main>
-<section class="articles">
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル1</h3>
-    <p>記事の概要をここに表示。</p>
+  <!-- パンくずリスト的な部分 -->
+  <div class="breadcrumb">
+    <p>トップ &gt; 通年プログラム &gt; 手取湖ボートクルーズ</p>
   </div>
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル2</h3>
-    <p>記事の概要をここに表示。</p>
-  </div>
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル3</h3>
-    <p>記事の概要をここに表示。</p>
-  </div>
-</section>
-<%= link_to '戻る', "javascript:history.back()", class: 'btn btn-primary' %>
-</main>
 
-<footer>
-<p>&copy; 2025 Neo Press. All rights reserved.</p>
-</footer>
+  <!-- メインコンテンツ -->
+  <main class="main-content">
+    <!-- サイドメニュー（必要なら） -->
+    <aside class="sidebar">
+      <h2>プログラム</h2>
+      <ul>
+        <li><a href="#">手取湖ボートクルーズ</a></li>
+        <li><a href="#">キャンプ体験</a></li>
+        <li><a href="#">ハイキング</a></li>
+        <li><a href="#">自然観察</a></li>
+      </ul>
+    </aside>
 
+    <!-- 記事部分 -->
+    <article class="content-area">
+      <h2 class="program-title">手取湖ボートクルーズ</h2>
+      <p class="program-description">
+        黒山ろくの豊かな自然の中で楽しむボートクルーズです。<br>
+        ご家族や仲間同士でわいわい盛り上がりながら、美しい湖面を満喫しましょう。<br>
+        プロのガイドがサポートいたしますので、初心者の方も安心してご参加いただけます。
+      </p>
+
+      <!-- メイン画像 -->
+      <div class="main-image">
+        <img src="images/main-boat.jpg" alt="手取湖ボートクルーズメインイメージ">
+      </div>
+
+      <!-- サブ画像一覧 -->
+      <div class="sub-images">
+        <img src="images/sub1.jpg" alt="ボートクルーズサブ画像1">
+        <img src="images/sub2.jpg" alt="ボートクルーズサブ画像2">
+        <img src="images/sub3.jpg" alt="ボートクルーズサブ画像3">
+        <img src="images/sub4.jpg" alt="ボートクルーズサブ画像4">
+      </div>
+
+      <!-- 体験情報など -->
+      <section class="program-info">
+        <h3>体験情報</h3>
+        <ul>
+          <li>開催期間：4月〜11月</li>
+          <li>所要時間：約2時間</li>
+          <li>料金：大人 3,000円 / 子供 1,500円</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+
+</body>
 
 
     <style>
-    /* 全体のリセット */
-    * {
+    /* ベースリセットやフォント設定は必要に応じて */
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
+      font-family: "Noto Sans JP", sans-serif;
+      background-color: #f9f7f2; /* 背景色(薄いベージュ系) */
       color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
-
+    
     /* ヘッダー */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      padding: 15px 20px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      z-index: 1000;
+    .site-header {
+      background-color: #8b5e3c; /* 茶系の背景色 */
+      color: #fff;
     }
-
-    .logo h1 {
-      font-size: 24px;
-      color: #222;
+    
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5em 1em;
     }
-
-    /* タイトルバナー */
-    .title-banner {
-      margin-top: 60px; /* ヘッダー分のスペース */
-      background: linear-gradient(135deg, #0073e6, #005bb5);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    .site-title {
+      margin: 0;
+      font-size: 1.4rem;
     }
-
-    .title-banner h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    
+    /* メインナビゲーション */
+    .main-nav ul {
+      display: flex;
+      gap: 1em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
-
-    .title-banner p {
-      font-size: 16px;
+    
+    .main-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
-
+    
+    .main-nav a:hover {
+      text-decoration: underline;
+    }
+    
+    /* 予約ボタン */
+    .reserve-button {
+      background-color: #f9a825; /* オレンジ系 */
+      color: #fff;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    
+    .reserve-button:hover {
+      background-color: #ec8700;
+    }
+    
+    /* パンくずリスト */
+    .breadcrumb {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5em 1em;
+    }
+    
+    .breadcrumb p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
     /* メインコンテンツ */
-    main {
-      padding: 20px;
-      padding-top: 20px; /* タイトルバナーの下余白 */
-      padding-bottom: 50px; /* フッター分の余白 */
-      flex-grow: 1;
-      text-align: center;
-      margin: 20px;
+    .main-content {
+      display: flex;
+      max-width: 1200px;
+      margin: 1em auto;
+      padding: 0 1em;
     }
-
-    /* 記事リスト */
-    .articles {
+    
+    /* サイドバー */
+    .sidebar {
+      width: 200px;
+      margin-right: 2em;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1em;
+    }
+    
+    .sidebar h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .sidebar li {
+      margin-bottom: 0.5em;
+    }
+    
+    .sidebar a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    
+    /* コンテンツ領域 */
+    .content-area {
+      flex: 1;
+      background-color: #fff;
+      padding: 1em;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    /* 見出しなど */
+    .program-title {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #8b5e3c; /* タイトルを茶系で */
+    }
+    
+    .program-description {
+      line-height: 1.6;
+      margin-bottom: 1em;
+    }
+    
+    /* メイン画像 */
+    .main-image {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    
+    .main-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    /* サブ画像 */
+    .sub-images {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      gap: 0.5em;
+      margin-bottom: 1em;
     }
-
-    .article {
-      text-align: center;
-      flex: 1 1 30%;
+    
+    .sub-images img {
+      width: calc(25% - 0.5em);
+      max-width: 100%;
+      border-radius: 4px;
     }
-
-    .article img {
-      width: 100%;
-      border-radius: 8px;
+    
+    /* 体験情報 */
+    .program-info {
+      background-color: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 1em;
     }
-
-    .article h3 {
-      margin-top: 10px;
-      font-size: 18px;
+    
+    .program-info h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
     }
-
-    .article p {
-      margin: 10px 0;
+    
+    .program-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-
+    
+    .program-info li {
+      margin-bottom: 0.3em;
+    }
+    
     /* フッター */
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #333;
-      color: white;
+    .site-footer {
+      background-color: #8b5e3c;
+      color: #fff;
       text-align: center;
-      padding: 10px;
+      padding: 1em 0;
+      margin-top: 1em;
     }
+    
   </style>
