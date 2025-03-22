@@ -194,6 +194,8 @@
 
 
 
+
+<% if current_user.progress_level >= 5 %>
     <div class="message-container friend">
       <img src="/assets/keisuke.png" alt="Instagram" width="40">
       <div class="message-content">
@@ -214,7 +216,7 @@
         </div>
       </div>
     </div>
-
+<% end %>
 
     <% if current_user.line_group.chat_3.present? %>
     <div class="message-container user">
@@ -453,9 +455,306 @@
         <div class="message friend"><%= link_to 'メモ-1', broken_smartphone_memo_history_1_path %></div>
     </div>
     </div>
-
-
     <% end %>
+
+<% if current_user.progress_level >= 9 %>
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          このメモは…子供？</br>
+          病院に通ってたって事は病気だった？</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">
+          定期的に通ってる感じだよね</br>
+          病院特定しても、</br>タイミング分からんし</br>
+          病院に迷惑かけるし…どうしようか…
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          米松の居酒屋でバイトしてる友達に</br>
+          「オーナーいつ来るか分かる？」って</br>
+          聞いたんけど…</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          「毎日、オーナーは来てたけど最近は</br>
+            まったく来てないみたいで、店長も</br>
+            来ない事は初めてで混乱してた」</br>
+            って言ってた</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">
+          キャバクラの方は分からんけど</br>
+          店から米松へのコンタクトはムズイか</br>
+          ってなると妻の米松茉莉を探して</br>
+          妻にスマホを渡す方が良いな
+        </div>
+      </div>
+    </div>
+
+
+    <div class="message-container friend">
+      <img src="/assets/hayato.png" alt="Facebook" width="40">
+      <div class="message-content">
+        <div class="username">室谷隼人</div>
+        <div class="message friend">
+          正直、ここで辞めて交番にスマホを</br>
+          届ければ、終わらせる事はできる</br>
+          けど…どうしよっか…</br>
+          俺が言い始めた事だし…うーん…</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/keisuke.png" alt="Instagram" width="40">
+    <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend"><%= link_to 'トーク履歴-2', broken_smartphone_talk_history_2_path %></div>
+    </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+        <div class="username">横山圭介</div>
+        <div class="message friend">
+        とりあえず、</br>
+        復元できたから共有するけど</br>
+        やばくない？</br>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+    <img src="/assets/hayato.png" alt="Facebook" width="40">
+    <div class="message-content">
+      <div class="username">室谷隼人</div>
+      <div class="message friend">
+        喜一って息子の名前だよな</br>
+        これは、ネグレクトだろ</br>
+      </div>
+    </div>
+  </div>
+
+    <div class="message-container friend">
+    <img src="/assets/hayato.png" alt="Facebook" width="40">
+    <div class="message-content">
+      <div class="username">室谷隼人</div>
+      <div class="message friend">
+        米松については良い話は少なく</br>
+        悪いウワサが多い感じだけど</br>
+        これは、許せないな
+      </div>
+    </div>
+  </div>
+
+
+  <div class="message-container friend">
+  <img src="/assets/keisuke.png" alt="Instagram" width="40">
+  <div class="message-content">
+    <div class="username">横山圭介</div>
+    <div class="message friend">
+    息子を助けるためにも</br>
+    息子を特定した方がいいじゃない？</br>
+    どうする？</br>
+    </div>
+  </div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    俺は助けてあげたいと</br>
+    思ってるから、そうしたい！</br>
+    2人とも協力してほしい！
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  もちろん！手伝うよ</br>
+  俺はネグレクトの証拠のために</br>
+  スマホの復元を急ぐよ</br>
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    ありがとう！</br>
+    <%= current_user.name %>と俺は息子担当だな</br>
+    とりあえず、学校を特定しよう！</br>
+    学校名が分かったら教えて！
+  </div>
+</div>
+</div>
+<% end %>
+
+<% if current_user.line_group.chat_6.present? %>
+<div class="message-container user">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+<div class="message-content">
+    <div class="username">自分</div>
+    <div class="message user"><%= current_user.line_group.chat_6 %></div>
+</div>
+</div>
+<% end %>
+
+<% if current_user.progress_level >= 10 %>
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    野崎山小学校か！</br>圭介の母校じゃない？</br>
+    <%= current_user.name %>と俺は隣の藤小だったな</br>
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  そうやな、</br>
+  俺らは中学からの付き合いだしな</br>
+  学校は特定できたけど、</br>
+  子供の名前が分からんな
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    名前まで特定できれば、</br>
+    ネグレクトの件で児童相談所に通報</br>
+    できるし、名前が知りたいね
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  苗字は米松だし</br>
+  下の名前が分かればいいね</br>
+  </div>
+</div>
+</div>
+
+<% end %>
+
+<% if current_user.line_group.chat_7.present? %>
+<div class="message-container user">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+<div class="message-content">
+    <div class="username">自分</div>
+    <div class="message user"><%= current_user.line_group.chat_7 %></div>
+</div>
+</div>
+<% end %>
+<% if current_user.progress_level >= 11 %>
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    米松喜一くんか！</br>
+    学校名とフルネーム分かれば</br>
+    ネグレクトを児童相談所に</br>
+    通報できるかな？
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  どうなるか分からないけど</br>
+  通報する事で助けにはなるはず</br>
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  <%= link_to '野崎山市-児童相談所～連絡フォーム～', google_page_page_4_path %>
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+  <div class="username">横山圭介</div>
+  <div class="message friend">
+  <%= current_user.name %>にお願いしていい？</br>
+  今までの情報を整理して</br>入力してくれれば大丈夫</br>
+  </div>
+</div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/hayato.png" alt="Facebook" width="40">
+<div class="message-content">
+  <div class="username">室谷隼人</div>
+  <div class="message friend">
+    俺らの中で一番調べてくれたし</br>
+    <%= current_user.name %>が連絡してくれるなら</br>
+    安心できるし！お願い！</br>
+    俺は米松文也の聞き込み行ってくる
+  </div>
+</div>
+</div>
+<% end %>
 
 
 

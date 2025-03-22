@@ -5,11 +5,11 @@
         <div class="chat-info">
             <h2>グループチャット（3）</h2>
             <% if current_user.progress_level == 9 %>
-            <p>場所の名前分かったら教えて！</p>
+            <p>学校名が分かったら教えて！</p>
             <% elsif current_user.progress_level == 10%>
-            <p>どこの経営者なんやろ？</p>
+            <p>下の名前が分かればいいね</p>
             <%else%>
-            <p>それぞれ調べてみようぜ</p>
+            <p>俺は米松文也の聞き込み行ってくる</p>
             <%end%>
         </div>
     </div>
@@ -19,7 +19,7 @@
 <% if current_user.progress_level >= 12 %>
     <%= link_to line_page_child_consultation_path, style: "text-decoration:none; color:inherit;" do %>
     <div class="chat-item">
-        <img src="/assets/kanazawaeki.png" alt="ユーザー">
+        <img src="/assets/zidousoudann.png" alt="ユーザー">
         <div class="chat-info">
             <h2>児童相談所</h2>
             <% if current_user.progress_level == 12 %>
