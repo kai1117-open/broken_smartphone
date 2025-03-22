@@ -1,145 +1,333 @@
-<header>
-<div class="logo">
-  <h1>Neo Press</h1>
-</div>
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-top-left">
+      <a href="#" class="logo">
+        <h2 class="text-link">野崎山</h2>
+      </a>
+    </div>
+    <div class="header-top-right">
+      <div class="text-size">
+        <span>文字サイズ</span>
+        <a href="#" class="text-size-btn">A</a>
+        <a href="#" class="text-size-btn">B</a>
+        <a href="#" class="text-size-btn">C</a>
+      </div>
+      <div class="color-switch">
+        <span>色合い</span>
+        <a href="#" class="color-btn">標準</a>
+        <a href="#" class="color-btn">白黒</a>
+      </div>
+      <div class="foreign-lang">
+        <a href="#">English</a> | <a href="#">繁體中文</a> | <a href="#">한국어</a>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="サイト内検索...（使えません）">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">防災・安全</a></li>
+      <li><a href="#">くらし</a></li>
+      <li><a href="#">行政情報</a></li>
+      <li><a href="#">観光</a></li>
+      <li><a href="#">文化・スポーツ</a></li>
+      <li><a href="#">企業誘致</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- ヘッダーとメインの間のタイトルバナー -->
-<div class="title-banner">
-<h2>片町経営者10選</h2>
-<p>六尾市出身の米松社長へのインタビュー</p>
-</div>
+<main class="main-content">
+  <h1>児童相談所-お問い合わせフォーム</h1>
+  <p class="form-notice">※個人を誹謗中傷する内容はご遠慮ください</p>
 
-<main>
-<section class="articles">
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル1</h3>
-    <p>記事の概要をここに表示。</p>
-  </div>
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル2</h3>
-    <p>記事の概要をここに表示。</p>
-  </div>
-  <div class="article">
-    <img src="https://via.placeholder.com/400x250" alt="記事画像">
-    <h3>記事タイトル3</h3>
-    <p>記事の概要をここに表示。</p>
-  </div>
-</section>
-<%= link_to '戻る', "javascript:history.back()", class: 'btn btn-primary' %>
+  <form id="quizForm" class="contact-form">
+    <div class="form-group">
+      <label for="name">被害を受けている方のフルネーム</label>
+      <input type="text" id="name" required placeholder="性と名の間にスペースはいりません">
+    </div>
+
+    <div class="form-group">
+      <label for="age">被害を受けている方の年齢</label>
+      <input type="text" id="age" placeholder="半角数字のみで入力してください">
+    </div>
+
+    <div class="form-group">
+      <label for="mother">その方の母親のフルネーム</label>
+      <input type="text" id="mother" required placeholder="性と名の間にスペースはいりません">
+    </div>
+
+    <div class="form-group">
+      <label for="father">その方の父親のフルネーム</label>
+      <input type="text" id="father" placeholder="性と名の間にスペースはいりません">
+    </div>
+
+    <div class="form-group">
+      <label for="school">被害を受けている方が通っている小学校の名前</label>
+      <input type="text" id="school" placeholder="例）○○小学校">
+    </div>
+
+    <div class="form-group">
+      <label for="message">ネグレクトの内容</label>
+      <textarea id="message" rows="3" required placeholder="ネグレクトの内容をご記入ください。"></textarea>
+    </div>
+
+    <div class="form-submit">
+      <button type="submit">送信</button>
+    </div>
+  </form>
 </main>
 
-<footer>
-<p>&copy; 2025 Neo Press. All rights reserved.</p>
-</footer>
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 2em;">
+  <a href="javascript:history.back()" class="btn">戻る</a>
+</div>
+<script>
+  document.getElementById("quizForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    const name = document.getElementById("name").value.trim();
+    const age = document.getElementById("age").value.trim();
+    const mother = document.getElementById("mother").value.trim();
+    const father = document.getElementById("father").value.trim();
+    const school = document.getElementById("school").value.trim();
+    const neglect = document.getElementById("message").value.trim();
 
+    const correctAnswers = {
+      name: "米松喜一",
+      age: "12",
+      mother: "米松茉莉",
+      father: "米松文也",
+      school: "野崎山小学校",
+      neglect: "朝ごはんを与えられない"
+    };
 
-    <style>
-    /* 全体のリセット */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    let isAllCorrect = (
+      name === correctAnswers.name &&
+      age === correctAnswers.age &&
+      mother === correctAnswers.mother &&
+      father === correctAnswers.father &&
+      school === correctAnswers.school &&
+      neglect === correctAnswers.neglect
+    );
+
+    if (isAllCorrect) {
+      alert("正解です！トップページへ移動します。");
+      window.location.href = "<%= google_page_page_5_path %>"; // ← 遷移先を必要に応じて変更
+    } else {
+      alert("どこかが間違っています。もう一度確認してください。");
     }
+  });
+</script>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
-    /* ヘッダー */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      padding: 15px 20px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      z-index: 1000;
-    }
+.site-header {
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #ccc;
+}
 
-    .logo h1 {
-      font-size: 24px;
-      color: #222;
-    }
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    /* タイトルバナー */
-    .title-banner {
-      margin-top: 60px; /* ヘッダー分のスペース */
-      background: linear-gradient(135deg, #0073e6, #005bb5);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+.header-top-left {
+  display: flex;
+  align-items: center;
+}
 
-    .title-banner h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+a {
+  text-decoration: none;
+}
 
-    .title-banner p {
-      font-size: 16px;
-    }
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
 
-    /* メインコンテンツ */
-    main {
-      padding: 20px;
-      padding-top: 20px; /* タイトルバナーの下余白 */
-      padding-bottom: 50px; /* フッター分の余白 */
-      flex-grow: 1;
-      text-align: center;
-      margin: 20px;
-    }
+.text-size span,
+.color-switch span {
+  margin-right: 0.5em;
+  font-size: 0.9rem;
+}
 
-    /* 記事リスト */
-    .articles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
+.text-size-btn,
+.color-btn {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 0.2em;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+}
 
-    .article {
-      text-align: center;
-      flex: 1 1 30%;
-    }
+.foreign-lang a {
+  text-decoration: none;
+  color: #007baf;
+  margin: 0 0.3em;
+}
 
-    .article img {
-      width: 100%;
-      border-radius: 8px;
-    }
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
 
-    .article h3 {
-      margin-top: 10px;
-      font-size: 18px;
-    }
+.search-box input {
+  padding: 0.3em 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-    .article p {
-      margin: 10px 0;
-    }
+.search-box button {
+  padding: 0.3em 1em;
+  background-color: #007baf;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-    /* フッター */
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
+.search-box button:hover {
+  background-color: #005f82;
+}
+
+.main-nav {
+  background-color: #007baf;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0.5em 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1em;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 0.8em;
+  display: inline-block;
+}
+
+.main-nav a:hover {
+  background-color: #005f82;
+  border-radius: 4px;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 0 1em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.main-content h1 {
+  font-size: 1.4rem;
+  margin: 1em 0 0.5em 0;
+  padding: 0 1em;
+  color: #007baf;
+}
+
+.form-notice {
+  padding: 0 1em;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.contact-form {
+  padding: 1em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3em;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-submit button {
+  background-color: #007baf;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.6em 2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-submit button:hover {
+  background-color: #005f82;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.btn {
+  background-color: #007baf;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #005f82;
+}
+</style>

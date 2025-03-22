@@ -15,6 +15,8 @@ class BrokenSmartphoneController < ApplicationController
   end
 
   def memo_history_1
+    if current_user.progress_level < 9
     current_user.update(progress_level: 9)
+    end
   end
 end

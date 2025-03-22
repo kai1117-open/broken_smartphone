@@ -1,0 +1,69 @@
+<div class="container mt-4">
+<h2 class="mb-3">将来有望な天才小学生が見つかる</h2>
+
+<div class="list-group">
+    <div class="list-group-item post">
+        <span class="post-header">ユーザー1</span> <span class="post-time">2025/02/24 10:00</span>
+        <p>これは最初の投稿です。</p>
+    </div>
+    <div class="list-group-item post">
+        <span class="post-header">ユーザー2</span> <span class="post-time">2025/02/24 10:05</span>
+        <p>返信ありがとうございます！</p>
+    </div>
+    <div class="list-group-item post">
+        <span class="post-header">ユーザー3</span> <span class="post-time">2025/02/24 10:10</span>
+        <p>このスレッド面白いですね。</p>
+    </div>
+    <div class="list-group-item post">
+        <span class="post-header">ユーザー4</span> <span class="post-time">2025/02/24 10:15</span>
+        <p>どんどん盛り上がりそう！</p>
+    </div>
+</div>
+
+<!-- ページネーション -->
+<nav aria-label="スレッドページ">
+    <ul class="pagination justify-content-center mt-3">
+        <li class="page-item disabled"><a class="page-link" href="#">前へ</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">次へ</a></li>
+    </ul>
+</nav>
+
+<div class="dash text-center mt-3 mb-3">
+<%= link_to '戻る', "javascript:history.back()", class: 'btn btn-primary' %>
+</div>
+
+</div>
+<style>
+body {
+background-color: #f8f9fa;
+}
+.container {
+max-width: 800px;
+background: #fff;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.post {
+padding: 10px;
+border-bottom: 1px solid #ddd;
+}
+.post:last-child {
+border-bottom: none;
+}
+.post-header {
+font-weight: bold;
+color: #007bff;
+}
+.post-time {
+font-size: 0.8rem;
+color: #888;
+}
+.pagination .page-item.active .page-link {
+background-color: #007bff;
+border-color: #007bff;
+}
+</style>

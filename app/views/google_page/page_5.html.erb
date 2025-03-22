@@ -1,0 +1,226 @@
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-top-left">
+      <a href="#" class="logo">
+        <h2 class="text-link">野崎山</h2>
+      </a>
+    </div>
+    <div class="header-top-right">
+      <div class="text-size">
+        <span>文字サイズ</span>
+        <a href="#" class="text-size-btn">A</a>
+        <a href="#" class="text-size-btn">B</a>
+        <a href="#" class="text-size-btn">C</a>
+      </div>
+      <div class="color-switch">
+        <span>色合い</span>
+        <a href="#" class="color-btn">標準</a>
+        <a href="#" class="color-btn">白黒</a>
+      </div>
+      <div class="foreign-lang">
+        <a href="#">English</a> | <a href="#">繁體中文</a> | <a href="#">한국어</a>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="サイト内検索...（使えません）">
+        <button>検索</button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">防災・安全</a></li>
+      <li><a href="#">くらし</a></li>
+      <li><a href="#">行政情報</a></li>
+      <li><a href="#">観光</a></li>
+      <li><a href="#">文化・スポーツ</a></li>
+      <li><a href="#">企業誘致</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content">
+  <h1>児童相談所-お問い合わせフォーム</h1>
+  <h5 class="mt-5 mb-5 text-center">お問い合わせありがとうございました。</h5>
+  <p class="form-notice text-center">確認次第、ご連絡いたします。</p>
+
+</main>
+
+<div class="d-flex justify-content-center align-items-center" style="margin-top: 2em;">
+  <%= link_to '児童相談所と連絡する', line_page_child_consultation_path, class: 'btn btn-success' %>
+</div>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.site-header {
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-top-left {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-top-right {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.text-size span,
+.color-switch span {
+  margin-right: 0.5em;
+  font-size: 0.9rem;
+}
+
+.text-size-btn,
+.color-btn {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 0.2em;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+.foreign-lang a {
+  text-decoration: none;
+  color: #007baf;
+  margin: 0 0.3em;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.search-box input {
+  padding: 0.3em 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-box button {
+  padding: 0.3em 1em;
+  background-color: #007baf;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #005f82;
+}
+
+.main-nav {
+  background-color: #007baf;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0.5em 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1em;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 0.8em;
+  display: inline-block;
+}
+
+.main-nav a:hover {
+  background-color: #005f82;
+  border-radius: 4px;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2em auto;
+  padding: 0 1em;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.main-content h1 {
+  font-size: 1.4rem;
+  margin: 1em 0 0.5em 0;
+  padding: 0 1em;
+  color: #007baf;
+}
+
+.form-notice {
+  padding: 0 1em;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.btn {
+  background-color: #007baf;
+  color: #fff;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #005f82;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+</style>

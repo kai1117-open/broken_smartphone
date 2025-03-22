@@ -1,0 +1,187 @@
+
+
+<div class="chat-container">
+  <div class="chat-header">
+    <div class="back-button">
+      <%= link_to line_page_top_path do %>
+        <span class="back-icon">&larr;</span> 戻る
+      <% end %>
+    </div>
+    <div class="header-title">児童相談所</div>
+  </div>
+
+  <div class="chat-body">
+
+    <div class="message-container friend">
+      <img src="/assets/keisuke.png" alt="Instagram" width="40">
+      <div class="message-content">
+          <div class="username">児童相談所</div>
+          <div class="message friend"><%= current_user.name %>様</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="chat-footer">
+
+    <% case current_user.progress_level %>
+      <% when 11 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_8, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 12 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_9, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 13 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_10, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 14 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_11, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 15 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_12, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 16 %>
+        <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_13, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+    <% end %>
+
+  </div>
+</div>
+
+
+<style>
+body {
+background-color: #d3e8d3;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+font-family: Arial, sans-serif;
+}
+.chat-container {
+width: 480px;
+height: 600px;
+background: #fff;
+border-radius: 15px;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 0;
+  background-color: #06C755;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chat-header .back-button {
+  position: absolute;
+  left: 10px;
+}
+
+.chat-header .back-button a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.chat-header .back-icon {
+  margin-right: 5px;
+}
+
+.chat-header .header-title {
+  text-align: center;
+}
+.chat-body {
+flex: 1;
+padding: 15px;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+}
+.message-container {
+display: flex;
+align-items: flex-start;
+margin-bottom: 10px;
+}
+.message-container.user {
+flex-direction: row-reverse;
+}
+.message-container img {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+margin: 0 10px;
+}
+.message-content {
+max-width: 70%;
+}
+.username {
+font-size: 12px;
+color: #888;
+margin-bottom: 2px;
+}
+.message {
+padding: 10px;
+border-radius: 10px;
+}
+.message.user {
+background: #06C755;
+color: white;
+border-bottom-right-radius: 0;
+}
+.message.friend {
+background: #f1f1f1;
+color: black;
+border-bottom-left-radius: 0;
+}
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+.chat-form {
+  /* フォーム全体を flex 要素として扱ってもOK */
+  display: flex;
+  width: 100%;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-button {
+  background: #06C755;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+</style>

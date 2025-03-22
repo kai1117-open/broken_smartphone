@@ -22,8 +22,10 @@
 <%= render "line_page/chat-list/chat-list-1" %>
 <% elsif current_user.progress_level <= 8 %>
 <%= render "line_page/chat-list/chat-list-2" %>
-<% elsif current_user.progress_level <= 12 %>
+<% elsif current_user.progress_level <= 11 %>
 <%= render "line_page/chat-list/chat-list-3" %>
+<% elsif current_user.progress_level <= 15 %>
+<%= render "line_page/chat-list/chat-list-4" %>
 <% end %>
 
 

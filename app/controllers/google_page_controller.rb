@@ -33,6 +33,14 @@ class GooglePageController < ApplicationController
     google.update(page_4: true)
   end
 
+  def page_5
+    google = Google.find_or_create_by(user_id: current_user.id)
+    google.update(page_5: true)
+    if current_user.progress_level < 12
+      current_user.update(progress_level: 12)
+    end
+  end
+
   private
 
   # クエリ文字列を正規化して取得
@@ -65,6 +73,9 @@ class GooglePageController < ApplicationController
       ],
       "黒山少年自然の家" => [
         { title: "黒山少年自然の家-活動報告", path: google_page_page_3_path }
+      ],
+      "野崎山小学校" => [
+        { title: "将来有望な天才小学生が見つかる", path: bakusai_page_5_path }
       ]
     }
   end

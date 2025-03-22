@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   post 'line_page/hayato', to: 'line_page#hayato'
   get 'line_page/keisuke', to: 'line_page#keisuke',as: 'line_page_keisuke'
   post 'line_page/keisuke', to: 'line_page#keisuke'
-
+  get 'line_page/child_consultation', to: 'line_page#child_consultation',as: 'line_page_child_consultation'
+  post 'line_page/child_consultation', to: 'line_page#child_consultation'
 
   get 'google_page/top'
   get 'google_page/index', to: 'google_page#index', as: 'google_page_index'
