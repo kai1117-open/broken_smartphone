@@ -1,0 +1,66 @@
+<% if current_user.progress_level >= 2 %>
+    <%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/kanazawaeki.png" alt="ユーザー">
+        <div class="chat-info">
+            <h2>グループチャット（3）</h2>
+            <% if current_user.progress_level == 9 %>
+            <p>学校名が分かったら教えて！</p>
+            <% elsif current_user.progress_level == 10%>
+            <p>下の名前が分かればいいね</p>
+            <%else%>
+            <p>俺は米松文也の聞き込み行ってくる</p>
+            <%end%>
+        </div>
+    </div>
+    <% end %>
+<% end %>
+
+<% if current_user.progress_level >= 12 %>
+    <%= link_to line_page_child_consultation_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/zidousoudann.png" alt="ユーザー">
+        <div class="chat-info">
+            <h2>児童相談所</h2>
+            <% if current_user.progress_level == 12 %>
+            <p>児童相談所</p>
+            <% elsif current_user.progress_level == 13%>
+            <p>どこの経営者なんやろ？</p>
+            <%else%>
+            <p>それぞれ調べてみようぜ</p>
+            <%end%>
+        </div>
+    </div>
+    <% end %>
+<% end %>
+
+<% if current_user.progress_level >= 1 %>
+    <%= link_to line_page_hayato_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/hayato.png" alt="室">
+        <div class="chat-info">
+            <h2>室谷隼人</h2>
+            <p>って事でグループチャットつくるわ！</p>
+        </div>
+        
+    </div>
+    <% end %>
+<% end %>
+
+<% if current_user.progress_level >= 0 %>
+    <%= link_to line_page_keisuke_path, style: "text-decoration:none; color:inherit;" do %>
+    <div class="chat-item">
+        <img src="/assets/keisuke.png" alt="横">
+        <div class="chat-info">
+            <h2>横山圭介</h2>
+            <% if current_user.keisuke.chat_1.present? %>
+            <p><%= current_user.keisuke.chat_1 %></p>
+            <% else %>
+            <p>教えてあげてくれる？</p>
+            <% end %>
+        </div>
+        
+    </div>
+    <% end %>
+<% end %>
+
