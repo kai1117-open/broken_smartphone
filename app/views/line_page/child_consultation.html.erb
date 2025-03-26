@@ -16,7 +16,10 @@
       <img src="/assets/zidousoudann.png" alt="Instagram" width="40">
       <div class="message-content">
           <div class="username">児童相談所</div>
-          <div class="message friend"><%= current_user.name %>様</div>
+          <div class="message friend"><%= current_user.name %>様</br>
+                                      ご連絡ありがとうございます。</br>
+                                      詳細を確認をさせて頂くため</br>
+                                      こちらのチャットで連絡いたしました。</div>
       </div>
     </div>
 
@@ -26,32 +29,32 @@
   <div class="chat-footer">
 
     <% case current_user.progress_level %>
-      <% when 11 %>
+      <% when 12 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_8, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
         <% end %>
-      <% when 12 %>
+      <% when 13 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_9, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
         <% end %>
-      <% when 13 %>
+      <% when 14 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_10, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
         <% end %>
-      <% when 14 %>
+      <% when 15 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_11, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
         <% end %>
-      <% when 15 %>
+      <% when 16 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_12, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
         <% end %>
-      <% when 16 %>
+      <% when 17 %>
         <%= form_with url: line_page_child_consultation_path, method: :post, local: true, html: { class: "chat-form" } do %>
           <%= text_field_tag :chat_13, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
           <%= submit_tag "▶", class: "chat-button" %>
