@@ -19,10 +19,42 @@
           <div class="message friend"><%= current_user.name %>様</br>
                                       ご連絡ありがとうございます。</br>
                                       詳細を確認をさせて頂くため</br>
-                                      こちらのチャットで連絡いたしました。</div>
+                                      チャットで連絡いたしました。</div>
       </div>
     </div>
 
+    <div class="message-container friend">
+      <img src="/assets/zidousoudann.png" alt="Instagram" width="40">
+      <div class="message-content">
+          <div class="username">児童相談所</div>
+          <div class="message friend">米松喜一くんのネグレクトの件ですが</br>
+                                      実は、先日も<%= current_user.name %>様以外の方からも</br>
+                                      本件の相談の連絡がありました。</br>
+                                      1件のみの通報だと立場上、動きにくく</div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/zidousoudann.png" alt="Instagram" width="40">
+      <div class="message-content">
+          <div class="username">児童相談所</div>
+          <div class="message friend"><%= current_user.name %>様の通報により</br>
+                                      米松氏への指導に踏み切れるので、</br>
+                                      心から感謝いたします。</br>
+                                      </div>
+      </div>
+    </div>
+
+    <div class="message-container friend">
+      <img src="/assets/zidousoudann.png" alt="Instagram" width="40">
+      <div class="message-content">
+          <div class="username">児童相談所</div>
+          <div class="message friend">１点だけ確認させて頂きたいのですが</br>
+                                      本件について把握している方は</br>
+                                      <%= current_user.name %>様の他にいらっしゃいますか</br>
+                                      よろしければ、全員をフルネームで</br>教えていただけますでしょうか。</div>
+      </div>
+    </div>
 
   </div>
 
