@@ -101,9 +101,11 @@
 </div>
 
 <div class="chat-footer">
+<% if current_user.progress_level == 1 %>
   <%= form_with url: line_page_hayato_path, method: :post, local: true, html: { class: "chat-form" } do %>
     <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
     <%= submit_tag "▶", class: "chat-button" %>
   <% end %>
+<% end %>
 </div>
 </div>

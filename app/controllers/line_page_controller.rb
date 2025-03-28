@@ -16,19 +16,10 @@ class LinePageController < ApplicationController
       case @user.progress_level
       when 12
         # 拡張性していく
-        process_group_step(:chat_9, params[:chat_9], ->(input){ input.include?("例のキーワード") }, 13)
+        process_group_step(:chat_8, params[:chat_8], ->(input){ input.include?("室谷隼人") && input.include?("横山圭介") }, 13)
       when 13
         # 拡張性していく
-        process_group_step(:chat_10, params[:chat_10], ->(input){ input.include?("例のキーワード") }, 14)
-      when 14
-        # 拡張性していく
-        process_group_step(:chat_11, params[:chat_11], ->(input){ input.include?("例のキーワード") }, 15)
-      when 15
-        # 拡張性していく
-        process_group_step(:chat_12, params[:chat_12], ->(input){ input.include?("例のキーワード") }, 16)
-      when 16
-        # 拡張性していく
-        process_group_step(:chat_13, params[:chat_13], ->(input){ input.include?("例のキーワード") }, 17)
+        process_group_step(:chat_9, params[:chat_9], ->(input){ input.include?("別人") }, 14)
       else
         flash[:alert] = "無効な状態です"
       end
@@ -48,6 +39,8 @@ class LinePageController < ApplicationController
     elsif request.post?
       if @user.progress_level == 1
         @user.keisuke.update(chat_1: params[:chat_1])
+      elsif @user.progress_level == 13
+        @user.keisuke.update(chat_2: params[:chat_2])
       end
       redirect_to line_page_keisuke_path and return
     end
@@ -95,9 +88,15 @@ class LinePageController < ApplicationController
       when 10
         # 進捗レベル9：chat_8の入力検証（例：特定の文字列で終わるか）
         process_group_step(:chat_7, params[:chat_7], ->(input){ input.include?("喜一") }, 11)
-      when 11
-        # 進捗レベル10：chat_9の入力検証（例：最終キーワードを含むか）
-        process_group_step(:chat_8, params[:chat_8], ->(input){ input.include?("例のキーワード") }, 12)
+      when 14
+        # 拡張性していく
+        process_group_step(:chat_10, params[:chat_10], ->(input){ input.include?("例のキーワード") }, 15)
+      when 15
+        # 拡張性していく
+        process_group_step(:chat_11, params[:chat_11], ->(input){ input.include?("例のキーワード") }, 16)
+      when 16
+        # 拡張性していく
+        process_group_step(:chat_12, params[:chat_12], ->(input){ input.include?("例のキーワード") }, 17)
       else
         flash[:alert] = "無効な状態です"
       end

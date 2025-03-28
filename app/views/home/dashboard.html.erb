@@ -13,8 +13,10 @@
 <%= render "home/progress_story/progress_1" %>
 <% elsif current_user.progress_level <= 8 %>
 <%= render "home/progress_story/progress_2" %>
-<% elsif current_user.progress_level <= 12 %>
+<% elsif current_user.progress_level <= 10 %>
 <%= render "home/progress_story/progress_3" %>
+<% elsif current_user.progress_level <= 13 %>
+<%= render "home/progress_story/progress_4"%>
 <% end %>
 </div>
 <footer class="footer">

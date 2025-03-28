@@ -57,11 +57,61 @@
     </div>
   </div>
 <% end %>
+
+
+<% if current_user.progress_level >= 13 %>
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">横山圭介</div>
+    <div class="message friend">もし、児童相談所の人から、</br>
+                                俺のことを聞かれても、</div>
 </div>
+</div>
+
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">横山圭介</div>
+    <div class="message friend">別人です</div>
+</div>
+</div>
+<div class="message-container friend">
+<img src="/assets/keisuke.png" alt="Instagram" width="40">
+<div class="message-content">
+    <div class="username">横山圭介</div>
+    <div class="message friend">って、返信して欲しい</br>
+                                頼む</div>
+</div>
+</div>
+<% end %>
+
+<% if current_user.keisuke.chat_2.present? %>
+  <div class="message-container user">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" width="40">
+    <div class="message-content">
+      <div class="username"><%= current_user.name %></div>
+      <div class="message user"><%= current_user.keisuke.chat_2 %></div>
+    </div>
+  </div>
+<% end %>
+
+</div>
+
+
 <div class="chat-footer">
-  <%= form_with url: line_page_keisuke_path, method: :post, local: true, html: { class: "chat-form" } do %>
-    <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
-    <%= submit_tag "▶", class: "chat-button" %>
-  <% end %>
+    <% case current_user.progress_level %>
+      <% when 1 %>
+        <%= form_with url: line_page_keisuke_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_1, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+      <% when 13 %>
+        <%= form_with url: line_page_keisuke_path, method: :post, local: true, html: { class: "chat-form" } do %>
+          <%= text_field_tag :chat_2, nil, placeholder: "メッセージを入力...", class: "chat-input" %>
+          <%= submit_tag "▶", class: "chat-button" %>
+        <% end %>
+
+    <% end %>
 </div>
 </div>

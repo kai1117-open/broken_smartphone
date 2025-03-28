@@ -1,4 +1,4 @@
-<% if current_user.progress_level >= 2 %>
+<% if current_user.progress_level >= 14 %>
     <%= link_to line_page_group_path, style: "text-decoration:none; color:inherit;" do %>
     <div class="chat-item">
         <img src="/assets/kanazawaeki.png" alt="ユーザー">
@@ -23,9 +23,9 @@
         <div class="chat-info">
             <h2>児童相談所</h2>
             <% if current_user.progress_level == 12 %>
-            <p>児童相談所</p>
+            <p>教えていただけますでしょうか。</p>
             <% elsif current_user.progress_level == 13%>
-            <p>どこの経営者なんやろ？</p>
+            <p>聞いたことは無いでしょうか</p>
             <%else%>
             <p>それぞれ調べてみようぜ</p>
             <%end%>
@@ -53,11 +53,19 @@
         <img src="/assets/keisuke.png" alt="横">
         <div class="chat-info">
             <h2>横山圭介</h2>
+        <% if current_user.progress_level <= 12 %>
             <% if current_user.keisuke.chat_1.present? %>
             <p><%= current_user.keisuke.chat_1 %></p>
             <% else %>
             <p>教えてあげてくれる？</p>
             <% end %>
+        <% else %>
+            <% if current_user.keisuke.chat_2.present? %>
+              <p><%= current_user.keisuke.chat_2 %></p>
+            <% else %>
+              <p>頼む</p>
+            <% end %>
+        <% end %>
         </div>
         
     </div>
